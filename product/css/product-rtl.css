@@ -1,0 +1,44 @@
+@media (max-width: 767.98px) {
+    .border-divider {
+        border-left: none !important;
+    }
+}
+
+
+.profile-card-2 {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+
+.mobile-stiky-div .inputquntity-div {
+    width: 112px;
+}
+
+.quantity-div-p {
+    float: right;
+}
+
+.price-div-p {
+    float: left;
+}
+
+.add-card-product-single {
+    float: left;
+    background-color: transparent;
+    border: 0px;
+}
+
+.name-product-single {
+    float: right;
+}
+
+.order-now-single {
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.paragraph-small .name-product-single {
+    margin-left: 10px;
+    margin-right: 0px;
+}

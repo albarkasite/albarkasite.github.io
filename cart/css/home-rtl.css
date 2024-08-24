@@ -1,0 +1,44 @@
+#mySidenav {
+    right: -149px;
+    padding: 0px 6px;
+    border-radius: 5px 0 0 5px;
+    left: 0;
+}
+
+    #mySidenav.active {
+        right: 0;
+        
+    }
+
+    #mySidenav i {
+        margin: 6px 0px 6px 5px;
+    }
+
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .btn-order-now-div .btn-gradient {
+        padding-left: 2.75rem !important;
+        padding-right: 2.75rem !important;
+    }
+}
+
+@media (max-width: 340px) {
+    .order-now {
+        margin-right: 0px !important;
+    }
+}
+
+
+.add-tocart-image {
+    float: left;
+}
+
+.bootstrap-select {
+    margin-right: auto;
+    left: 0;
+}
+
+.list-tag-products-only .list-inline-item:not(:last-child) {
+    margin-left: 1rem;
+    margin-right: 0;
+}

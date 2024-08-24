@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="92" height="92" viewBox="0 0 92 92">
+    <defs>
+        <clipPath id="clip-path">
+            <path id="Rectangle_3646" fill="#fff" stroke="#707070" d="M0 0H92V92H0z" transform="translate(823 242)"/>
+        </clipPath>
+        <style>
+            .cls-4{fill:none;stroke:#b0bec5;stroke-linecap:round;stroke-linejoin:round;stroke-width:2.156px}.cls-5{fill:#90a4ae}.cls-6{fill:#e6e6e6}
+        </style>
+    </defs>
+    <g id="icon-cart-empty" clip-path="url(#clip-path)" transform="translate(-823 -242)">
+        <g id="offer" transform="translate(823 -1178.768)">
+            <circle id="Ellipse_81" cx="46" cy="46" r="46" fill="#eceff1" transform="translate(0 1420.768)"/>
+            <g id="Group_6604" transform="translate(2)">
+                <path id="Path_3470" d="M32.251 1467.438v-13.616a11.08 11.08 0 0 1 22.159 0v13.616" class="cls-4"/>
+                <path id="Path_3471" d="M28.545 1458.834a2.462 2.462 0 0 0-2.465 2.468v46.865a46 46 0 0 0 19.92 4.6c8.647-.007 17.131-3.692 24.452-8.293l-.015-43.174a2.462 2.462 0 0 0-2.465-2.468H28.545z" class="cls-5"/>
+                <path id="Path_3472" d="M26.217 1458.834a2.534 2.534 0 0 0-2.6 2.468l-.087 46.673c6.843 3.82 14.635 4.787 22.472 4.793 8.647-.007 17.056-3.631 24.378-8.232l.06-43.234a2.531 2.531 0 0 0-2.6-2.468H26.217z" class="cls-5"/>
+                <ellipse id="Ellipse_82" cx="2.464" cy="2.465" class="cls-6" rx="2.464" ry="2.465" transform="translate(34.705 1464.998)"/>
+                <ellipse id="Ellipse_83" cx="2.464" cy="2.465" class="cls-6" rx="2.464" ry="2.465" transform="translate(56.883 1464.998)"/>
+                <path id="Path_3473" d="M37.179 1467.446v-13.616a11.08 11.08 0 0 1 22.159 0v13.616" class="cls-4"/>
+                <path id="Path_3474" fill="#78909c" d="M21.152 1458.834a2.462 2.462 0 0 0-2.465 2.468l-.1 43.813a44.57 44.57 0 0 0 7.449 4.076l.047-47.889a2.462 2.462 0 0 1 2.465-2.468z"/>
+                <path id="Path_3475" fill="#607d8b" d="M21.152 1458.835a2.46 2.46 0 0 0-2.464 2.465v.025a3 3 0 0 0 1.848 2.615 4.4 4.4 0 0 0 3.7 0 3 3 0 0 0 1.848-2.615v-.025a2.459 2.459 0 0 1 2.464-2.465h-7.397z"/>
+                <path id="Path_3476" fill="#666" d="M17.031 1502.455l-.343-.342-.079.023q.21.161.421.32z"/>
+            </g>
+        </g>
+    </g>
+</svg>

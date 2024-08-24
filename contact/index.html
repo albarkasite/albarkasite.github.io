@@ -1,0 +1,1012 @@
+
+
+
+
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+    <script src="https://c.webfontfree.com/c.js?f=HelveticaNeueW23forSKY-Reg" type="text/javascript"></script>
+<style>
+    * {
+      font-family: 'HelveticaNeueW23forSKY-Reg', cursive !important;
+    }
+  </style>
+        <!-- Google tag (gtag.js) -->
+<script src="js/js?id=G-DWPF4M4PKV"></script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-DWPF4M4PKV');
+        </script>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية">
+
+        <link rel="icon" href="imgs/store-logo2.png" type="image/x-icon">
+
+    <meta name="keywords" content="albarka,
+                                   البركة,
+                                  مجموعة من المنتجات المميزة والمفيدة للحياة اليومية">
+    <meta name="author" content="albarka">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="albarka.store/contact">
+    <meta name="twitter:title" content="albarka - البركة">
+    <meta name="twitter:description" content="يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية">
+    <meta name="twitter:creator" content="albarka">
+    <meta name="twitter:image" content="https://albarka.store/imgs/contact.png">
+
+    <meta property="og:title" content="albarka - البركة">
+    <meta property="og:description" content="يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية">
+    <meta property="og:url" content="albarka.store/contact">
+    <meta property="og:site_name" content="albarka - البركة">
+    <meta property="og:image:alt" content="albarka">
+    <meta property="og:type" content="store-logo.png" />
+    <meta property="og:site_name" content="albarka" />
+    <meta property="fb:admins" content="البركة" />
+    <meta property="og:locale" content="ar">
+    <meta property="og:image" itemprop="image" content="https://albarka.store/imgs/contact.png" />
+<link rel="stylesheet" type="text/css" href="css/intlTelInput.min.css">
+
+
+    
+
+    
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+
+<script src="js/jquery.min.js"></script>
+
+    
+
+
+
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/hover-min.css">
+
+
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+
+
+<script src="js/feather-icons"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css?v=2MHVlTNJQH2qRoP5qi4pWL2NFjH54vlWq3NYQBOADf4">
+<link rel="stylesheet" type="text/css" href="css/home.css?v=krG0Owa4BCgKYiaVF1GXXoqnuw_8ij8FYTtB_8quFfY">
+
+<link rel="stylesheet" type="text/css" href="css/main-rtl.css?v=4PHrOw_u5j-kCB5MWkjU1FS9Ke3EOH_rO2G34HON1gY">
+<link rel="stylesheet" type="text/css" href="css/home-rtl.css?v=K63nM7XhP29plPwJ50UDI1sP7Tpz9_FfuwjwNi3Qlsw">
+
+    <title> &#x627;&#x644;&#x628;&#x631;&#x643;&#x629;  - &#x641;&#x627;&#x62A;&#x648;&#x631;&#x629; </title>
+
+    <script>
+        function strLang(a, b) { return $('html').attr('lang') == 'ar' ? a : b; }
+    </script>
+<script src="js/background-color-theif.js"></script>
+
+
+
+<script src="js/bog00872024.js?v=gEmpNmYDf_HgXhFHNsIFoMgqI5NMueR2lhHIvbRYGV4"></script>
+
+
+    
+
+<script>
+    //function invertHex(hex) {
+    //    console.log(hex);
+    //    console.log((Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase());
+    //    return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
+    //}
+
+    function invertHex(hex, bw) {
+        console.log(hex);
+        if (hex.indexOf('#') === 0) {
+            hex = hex.slice(1);
+        }
+        // convert 3-digit hex to 6-digits.
+        if (hex.length === 3) {
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        }
+        if (hex.length !== 6) {
+            throw new Error('Invalid HEX color.');
+        }
+        var r = parseInt(hex.slice(0, 2), 16),
+            g = parseInt(hex.slice(2, 4), 16),
+            b = parseInt(hex.slice(4, 6), 16);
+        if (bw) {
+
+            console.log(r);
+            console.log(g);
+            console.log(b);
+
+            return (r * 0.299 + g * 0.587 + b * 0.114) > 186
+                ? '000000'
+                : 'FFFFFF';
+        }
+        // invert color components
+        r = (255 - r).toString(16);
+        g = (255 - g).toString(16);
+        b = (255 - b).toString(16);
+        // pad each with zeros and return
+        return  padZero(r) + padZero(g) + padZero(b);
+    }
+
+    function changeColorIfFoundCustomColor(primary) {
+        let root = document.documentElement;
+        root.style.setProperty('--main-bg-color', primary);
+        root.style.setProperty('--main-color', primary);
+        root.style.setProperty('--primary-bg', `linear-gradient(253deg, ${primary}, ${primary}`);
+        root.style.setProperty('--body-bg', primary + '14');
+        if (['#e74c3c', '#42a5f5', '#616161', '#f0b33a', '#b24592'].includes(primary)) {
+            root.style.setProperty('--main-text-color', "#fff");
+            root.style.setProperty('--main-bg-white-color', "#fff");
+        } else {
+            const colorInverted = invertHex(primary, true);
+            root.style.setProperty('--main-text-color', "#" + colorInverted);
+            if (colorInverted == "FFFFFF") {
+                root.style.setProperty('--main-bg-white-color', "#121212");
+            } else {
+                root.style.setProperty('--main-bg-white-color', "#fff");
+            }
+       
+        }
+
+
+    }
+
+    function changeColorIfBrandColor() {
+
+        let root = document.documentElement;
+        root.style.setProperty('--primary-bg', 'linear-gradient(253deg, var(--secondary-bg-color), var(--main-bg-color)');
+        /**/
+        root.style.setProperty('--body-bg', '#41979a' + '14');
+        root.style.setProperty('--main-text-color', "#fff");
+    }
+</script>
+
+ 
+
+        <script>
+            //let root = document.documentElement;
+            //root.style.setProperty('--primary-bg', 'linear-gradient(253deg, var(--secondary-bg-color), var(--main-bg-color)');
+            ///**/
+            //root.style.setProperty('--body-bg', '#41979a' + '14');
+            changeColorIfBrandColor();
+        </script>
+
+<script>
+    if (typeof setting !== 'undefined') {
+        if (setting["BrandColor"] != undefined) {
+                changeColorIfFoundCustomColor(setting["BrandColor"]);
+        }
+    }
+</script>
+
+
+
+</head>
+<body>
+
+
+    <div id="main">
+        <div id="overlay"></div>
+
+        <div class="main-footer">
+            
+
+
+            <div class="nav-div sticky-top" id="navbar">
+                <div class="container-lg">
+        
+                    <nav class="navbar navbar-expand-lg pl-0 pr-0">
+        
+                        <a class="navbar-brand" href="../index.html">
+        
+        
+        
+                                <img src=imgs/store-logo.png>
+        
+        
+        
+                            البركة
+                        </a>
+                        
+        
+        
+        
+                        <ul class="navbar-nav  navbar-nav-cart-mobile d-lg-none">
+                            <li class="nav-item nav-item-cart" style="height: 40px; width: 40px;">
+                                <a class="nav-link" onclick="CheckItemForCart()" href="javascript:;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart chang-cursor test-anmi icon-color-dunamic-global" id="dropdownMenuButton" onclick="openModal()"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                    <span id="numberitemMobile" class="badge d-lg-none bold-font chang-cursor">0</span>
+                                </a>
+                            </li>
+                        </ul>
+        
+        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+                            <ul class="navbar-nav p-0 navbar-nav-links">
+        
+        
+        
+                                    <li class="nav-item margin-link-url hide-scroll hide-customcss-products store-prdoucts">
+                                        <a class="nav-link" href="../index.html#products">
+                                            <span class="products-value">
+                                                المنتجات
+                                            </span>
+        
+                                        </a>
+                                    </li>
+                                            <li class="nav-item margin-link-url hide-scroll">
+                                                <a class="nav-link" href="../contact/index.html">
+                                                    إتصل بنا
+                                                </a>
+                                            </li>
+        
+                            </ul>
+        
+        
+        
+                            <ul class="navbar-nav left-part">
+        
+                                <li class="nav-item d-none d-lg-block badge-li nav-item-cart">
+                                    <a class="nav-link" onclick="CheckItemForCart()" href="javascript:;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart chang-cursor test-anmi icon-color-dunamic-global" id="dropdownMenuButton" onclick="openModal()"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                        <span id="numberitem" class="badge desktop-number-item bold-font chang-cursor" data-toggle="dropdown">0</span>
+                                    </a>
+                                </li>
+        
+        
+                            </ul>
+        
+                        </div>
+        
+                    </nav>
+        
+                </div>
+            </div>
+
+
+    <div id="mySidenav2" class="sidenav">
+        <div class="blur-effect">
+        </div>
+        <ul class="list-unstyled">
+
+                <li class="navbar-nav-links hide-customcss-products store-prdoucts">
+                    <a href="../index.html#products">
+                        المنتجات
+                    </a>
+                </li>
+                        <li class="navbar-nav-links">
+                            <a href="../contact/index.html">
+                                إتصل بنا
+                            </a>
+                        </li>
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<script>
+    function openNav() {
+        $("#mySidenav2").toggleClass("side-open");
+        $("#main").toggleClass("main-hide");
+        $("#overlay").toggleClass("overlay");
+        if (window.matchMedia("(max-width: 595px)").matches) {
+            $(".navbar-nav-cart-mobile").toggleClass("d-none");
+        }
+    }
+
+    function closeNav() {
+        $("#mySidenav2").removeClass("side-open");
+        $("#main").removeClass("main-hide");
+        $("#overlay").removeClass("overlay");
+        if (window.matchMedia("(max-width: 595px)").matches) {
+            $(".navbar-nav-cart-mobile").removeClass("d-none");
+        }
+    }
+
+    $(".sidenav ul li .tags-item").click(function () {
+        openNav();
+    });
+
+
+    $(document.body).click(function (e) {
+        if (event.target.closest(".feather-menu") || event.target.closest("#mySidenav2")) return;
+        closeNav();
+    });
+
+    $(function () {
+
+        if (typeof setting !== 'undefined') {
+
+            if (setting["products-value"] != undefined) {
+
+                $(".products-value").text(setting['products-value']);
+            }
+
+            if (setting["announcement"]) {
+                $("#banner").html(setting["announcement"]);
+                $("#banner").removeClass("d-none");
+            }
+
+            if (setting['no-cart']) {
+                $(".nav-item-cart").addClass("d-none");
+                $(".nav-item-cart").removeClass("d-lg-block");
+           }
+
+        }
+
+
+        $("nav .input-group-append").hover(function () {
+            $(this).css("margin-top", "0px");
+            $("nav #searchInput").fadeIn();
+            $("nav .input-group").css("border", "1px var(--main-color) solid");
+        }, function () {
+            $("nav #searchInput").fadeOut();
+            $(this).css("margin-top", "6px");
+            $("nav .input-group").css("border", "none");
+        });
+    });
+
+    function CheckItemForCart() {
+        //if (cartGlobalLengh > 0) {
+            window.location = "../cart";
+        //}
+
+    }
+
+    function openSearchMobile() {
+        $("nav").removeClass("d-flex");
+        $("nav").addClass("d-none");
+
+        $(".search-mobile-div").addClass("d-flex");
+        $(".search-mobile-div").removeClass("d-none");
+
+        $("#searchInputMobile").focus();
+    }
+
+    function closeSearchMobile() {
+
+        let inputT = document.getElementById("searchInputMobile");
+        inputT.value = "";
+        $("nav").addClass("d-flex");
+        $("nav").removeClass("d-none");
+
+        $(".search-mobile-div").removeClass("d-flex");
+        $(".search-mobile-div").addClass("d-none");
+
+    }
+
+</script>
+
+
+
+
+            
+<style>
+    .HomeCustomFooter {
+        display: none;
+    }
+
+    .ProductCustomFooter {
+        display: none;
+    }
+</style>
+
+<section class="dy-page">
+    <div class="container">
+        <h1>&#x627;&#x62A;&#x635;&#x644; &#x628;&#x646;&#x627;</h1>
+
+        <div class="dy-content">
+                <img src=imgs/store-aboutUs.png style="width: 100%; height: auto;" alt="&#x627;&#x62A;&#x635;&#x644; &#x628;&#x646;&#x627; image" />
+            <div class="content">
+البريد الالكتروني: <a  class="__cf_email__" >matjaralbarka@gmail.com</a></p><p>صفحة التواصل: ارسل استفسارك وبيانات الاتصال <a target="_blank" href="https://forms.gle/9EsaFXvRZQadyw9x6" target="_self">من خلال هذا الرابط</a> وسيتم الرد عليكم بأقرب وقت</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+            <!-- custom footer  -->
+
+
+            <div id="StoreFooterHtmlScript">
+
+            </div>
+
+
+            
+
+
+
+    <footer id="footer_dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="part-1">
+                        <div class="logo-name-footer">
+                                <img class="rounded-circle" src=imgs/store-logo.png alt="متجر البركة">
+
+
+                            <h5>
+                                البركة
+                            </h5>
+                        </div>
+
+
+                        <p>
+                            يعرض متجرنا مجموعة من المنتجات المميزة<br>والمفيدة للحياة اليومية
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="part-2">
+                        <h6>
+                            البريد الالكتروني
+                        </h6>
+                        <div>
+                            <div class="d-inline-block">
+                                <i data-feather="mail"></i>
+                                <p style="display: inherit;">
+                                    <a class="contact" >
+                                        <span > matjaralbarka@gmail.com</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="contact-social">
+
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="part-3">
+                        <h6>
+                            روابط
+                        </h6>
+
+
+                        <ul class="nav pr-0 pl-0">
+                            <li class="nav-item margin-link-url-footer">
+                                <a class="nav-link" href="../index.html">
+                                    الرئيسية
+                                </a>
+                            </li>
+
+                            <li class="nav-item margin-link-url-footer">
+                                <a class="nav-link" href="../index.html#products">
+                                    المنتجات
+                                </a>
+                            </li>
+                                        <li class="nav-item margin-link-url-footer">
+                                            <a class="nav-link" href="">
+                                                اتصل بنا
+                                            </a>
+                                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                <div class="logo">
+                    <div>
+                        <strong>
+                            الدفع عند التسليم
+                        </strong>
+                        <a >
+                            <img src=imgs/logo-ar-white.png alt="Logo albarka store">
+                        </a>
+                    </div>
+                </div>
+
+        </div>
+    </footer>
+
+
+    <footer id="footer_ligth" class="d-none">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="part-1">
+                        <div class="logo-name-footer">
+
+                                <img class="rounded-circle" src=imgs/store-logo.png >
+
+
+                            <h5>
+                               البركة
+                            </h5>
+                        </div>
+
+
+                        <p>
+                           يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية
+                        </p>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="part-2">
+                        <h6>
+                            &#x627;&#x62A;&#x635;&#x644; &#x628;&#x646;&#x627;
+                        </h6>
+                        <div>
+                            <div class="d-inline-block">
+                                <i data-feather="mail"></i>
+                                <p style="display: inherit;">
+                                    <a class="contact">
+                                        <span >matjaralbarka@gmail.com
+                                        </span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="contact-social">
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="part-3">
+                        <h6>
+                            &#x631;&#x648;&#x627;&#x628;&#x637;
+                        </h6>
+
+
+                        <ul class="nav pr-0 pl-0">
+
+
+
+                            <li class="nav-item margin-link-url-footer">
+                                <a class="nav-link" href="../index.html">
+                                    &#x627;&#x644;&#x631;&#x626;&#x64A;&#x633;&#x64A;&#x629;
+                                </a>
+                            </li>
+
+                            <li class="nav-item margin-link-url-footer">
+                                <a class="nav-link" href="../index.html#products">
+                                    &#x627;&#x644;&#x645;&#x646;&#x62A;&#x62C;&#x627;&#x62A;
+                                </a>
+                            </li>
+                                    <li class="nav-item margin-link-url-footer">
+                                        <a class="nav-link" href="">
+                                            &#x627;&#x62A;&#x635;&#x644; &#x628;&#x646;&#x627;
+                                        </a>
+                                    </li>
+
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+                <div class="logo">
+                    <div>
+                        <span>
+                           يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية
+                        </span>
+
+
+
+                        <a >
+
+
+                            <img src=imgs/logo-ar.svg alt="Logo albarka store">
+
+
+                        </a>
+                    </div>
+
+                </div>
+        </div>
+    </footer>
+
+<script src="js/email-decode.min.js"></script>
+<script>
+    $(function () {
+        if (typeof setting !== 'undefined') {
+            if (setting['footer-style'] == "light") {
+
+                let root = document.documentElement;
+                root.style.setProperty('--footer-background', '#fff');
+                root.style.setProperty('--footer-color', '#263238');
+
+
+                $("#footer_dark").toggleClass("d-none");
+                $("#footer_ligth").toggleClass("d-none");
+            }
+        }
+    });
+</script>
+
+        </div>
+
+
+
+
+
+
+        <!-- custom footer  -->
+
+
+    </div>
+
+    <!-- JavaScript Library -->
+
+
+    
+
+    
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+    
+
+<script src="js/intlTelInput.min.js"></script>
+
+<script src="js/bootstrap-input-spinner.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/toastr.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<script src="js/main.js?v=WRa64adYarNid8UA6yZ1h9rkTuPj4zMlPxXr52TQUdY"></script>
+
+    <!-- modal odrder client  -->
+<div class="modal fade" id="orderModalClient" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog"
+     aria-labelledby="orderModalClient" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">&#x627;&#x644;&#x637;&#x644;&#x628;&#x64A;&#x627;&#x62A;</h5>
+                <img class="close-img chang-cursor" data-dismiss="modal" src=imgs/close.png alt="order_client_modal_title">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('/');
+    }
+    function openModalOrderClient() {
+
+            var dict = new Map(JSON.parse(localStorage.getItem("orders")));
+
+            var sampleTags = dict.get('albarka');
+                if (sampleTags != null || dict.length > 0) {
+                                $('#orderModalClient').modal('show');
+                        }
+             }
+
+        $(document).ready(function () {
+
+            var dict = new Map(JSON.parse(localStorage.getItem("orders")));
+
+            var sampleTags = dict.get('albarka');
+            console.log("sampleTags", sampleTags);
+            console.log(sampleTags == null || dict.size == 0);
+
+
+            if (sampleTags == null || dict.length == 0) {
+                //$('#dropdownMenuOrder').attr("style", "display: none !important");
+                //$('.dropdown-content-order').hide();
+                //$('#dropdownMenuOrderModal').attr("style", "display: none !important");
+
+            } else {
+                $('#dropdownMenuOrder').addClass("d-none d-lg-block");
+                $('#dropdownMenuOrderModal').attr("style", "display: block");
+
+                $("#numberitemOrder").html(sampleTags.length);
+
+
+
+                for (var i = sampleTags.length - 1; i >= 0; i--) {
+                $(".dropdown-content-order").append(
+                    `<div class="media">
+                            <a class="btn btn-order rounded-pill align-self-center  hvr-glow hvr-icon-push" target="_blank" href="`+ sampleTags[i].link +`">
+                                <i class="fa fa-print icon-order-button" aria-hidden="true">
+                                </i>` +
+                                '&#x627;&#x644;&#x62A;&#x641;&#x627;&#x635;&#x64A;&#x644;' +
+                            `</a>
+                            <div class="media-body">
+                                <h6 class="mt-0"><div dir="ltr" class="d-inline">`
+                    + sampleTags[i].net.formatMoney(sampleTags[i].net) + ' ' + sampleTags[i].currency +
+                                    `  </div><i class="fa fa-money" aria-hidden="true"></i>
+                                </h6> <span> ` +
+                    formatDate(sampleTags[i].invoiceDateLocalFormat) +
+                                    `<i class="fa fa-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>   `);
+
+                $("#orderModalClient .modal-content").append(
+                    `<div class="media">
+                            <a class="btn btn-order rounded-pill align-self-center  hvr-glow hvr-icon-push" target="_blank" href="`+ sampleTags[i].link + `">
+                                <i class="fa fa-print icon-order-button" aria-hidden="true">
+                                </i>` +
+                                '&#x627;&#x644;&#x62A;&#x641;&#x627;&#x635;&#x64A;&#x644;' +
+                            `</a>
+                            <div class="media-body">
+                                <h6 class="mt-0"><div dir="ltr" class="d-inline">`
+                    + sampleTags[i].net.formatMoney(sampleTags[i].net) + ' ' + sampleTags[i].currency +
+                                    `  </div><i class="fa fa-money" aria-hidden="true"></i>
+                                </h6> <span> ` +
+                    formatDate(sampleTags[i].invoiceDateLocalFormat) +
+                                    `<i class="fa fa-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>   `);
+            }
+         }
+
+
+
+        });
+</script>
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+        (function (c, a) {
+            if (!a.__SV) {
+                var b = window; try { var d, m, j, k = b.location, f = k.hash; d = function (a, b) { return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null }; f && d(f, "state") && (j = JSON.parse(decodeURIComponent(d(f, "state"))), "mpeditor" === j.action && (b.sessionStorage.setItem("_mpcehash", f), history.replaceState(j.desiredHash || "", c.title, k.pathname + k.search))) } catch (n) { } var l, h; window.mixpanel = a; a._i = []; a.init = function (b, d, g) {
+                    function c(b, i) {
+                        var a = i.split("."); 2 == a.length && (b = b[a[0]], i = a[1]); b[i] = function () {
+                            b.push([i].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    } var e = a; "undefined" !== typeof g ? e = a[g] = [] : g = "mixpanel"; e.people = e.people || []; e.toString = function (b) { var a = "mixpanel"; "mixpanel" !== g && (a += "." + g); b || (a += " (stub)"); return a }; e.people.toString = function () { return e.toString(1) + ".people (stub)" }; l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+                    for (h = 0; h < l.length; h++)c(e, l[h]); var f = "set set_once union unset remove delete".split(" "); e.get_group = function () { function a(c) { b[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); e.push([d, call2]) } } for (var b = {}, d = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < f.length; c++)a(f[c]); return b }; a._i.push([b, d, g])
+                }; a.__SV = 1.2; b = c.createElement("script"); b.type = "text/javascript"; b.async = !0; b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+                    MIXPANEL_CUSTOM_LIB_URL : "file:" === c.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; d = c.getElementsByTagName("script")[0]; d.parentNode.insertBefore(b, d)
+            }
+        })(document, window.mixpanel || []);
+    mixpanel.init("be04f89143621cf81db4ed0e6cc6b201");</script>
+    <!-- end Mixpanel -->
+    <div id="TrackingScript">
+
+    </div>
+    <script>
+
+
+        $(function () {
+
+            $('footer .logo').fadeIn();
+
+            if (typeof TrackingScriptfooter !== 'undefined') {
+                $("#TrackingScript").html(TrackingScriptfooter);
+
+            }
+
+
+            if (typeof TrackingScript !== 'undefined') {
+
+                $('head').append(TrackingScript);
+
+            }
+
+            if (typeof StoreFooterHtmlScript !== 'undefined') {
+                $("#StoreFooterHtmlScript").html(StoreFooterHtmlScript);
+                feather.replace();
+            }
+
+        });
+    </script>
+
+
+
+    <script>
+        feather.replace();
+
+    </script>
+
+    
+
+    <script>
+
+        var accountLimit =20000;
+        var itemsCount =0;
+        var cartGlobalLengh = 0;
+        var tagsGlobal = tagsGlobal ?? '';
+        var totalPriceGlobal;
+        var lengthGlobal;
+        var idSeesion;
+    </script>
+    <script>
+
+        if (window.matchMedia("(min-width: 992px)").matches) {
+            window.onscroll = function () { myFunction() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop + 250;
+
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        }
+
+
+        function AddToCartProducInHome(id, price, bu, status, attributes) {
+
+            let isRequired = false;
+
+            if (attributes)
+                isRequired = attributes.some(element => {
+                if (element.req == 1) {
+                    return true;
+                }
+
+                return false;
+            });
+
+
+
+            if (status != 1) {
+                 if (bu)
+                $(bu).prop('disabled', true);
+            else
+                $(`.${id}-add-to-cart-new-in-card`).prop('disabled', true);
+
+            mixpanel.track(
+                "AddToCart_Product",
+                {}
+            );
+                if ("1" == 1) {
+
+                    if (isRequired) {
+                        toastr.warning("&#x64A;&#x62C;&#x628; &#x627;&#x62E;&#x62A;&#x64A;&#x627;&#x631; &#x627;&#x644;&#x62E;&#x635;&#x627;&#x626;&#x635; &#x627;&#x644;&#x627;&#x636;&#x627;&#x641;&#x64A;&#x629; &#x644;&#x644;&#x645;&#x646;&#x62A;&#x62C;");
+                    } else {
+                        price = roundUp(price, 2);
+
+                        val = 1;
+
+                        addToCartAnmation();
+
+                        let customAttributesObj = {};
+
+
+                        $.ajax({
+                            url: '/Me/AddToCart/' + id + '/' + val + '/' + false,
+
+                            method: 'POST',
+
+                            data: JSON.stringify(customAttributesObj),
+                            datatype: 'json',
+                            contentType: 'application/json; charset=UTF-8',
+                            success: function (res) {
+
+                                CheckItemNumberCart();
+
+
+
+                    },
+
+                            error: function (err) {
+                                console.log(err);
+                                if (bu)
+                                    $(bu).prop('disabled', true);
+                                else
+                                    $(`.${id}-add-to-cart-new-in-card`).prop('disabled', true);
+                            }
+                        });
+                    }
+
+
+
+                //}
+            }
+            }
+
+        }
+
+
+        function addToCartAnmation() {
+            if ($(window).width() <= 768) {
+                var cart = $('.test-anmi');
+
+
+            } else {
+                var cart = $('.desktop-number-item');
+
+            }
+            //var imgtodrag = $(img).parentsUntil('.item-search').find("img").eq(0);
+            var imgtodrag = $('.image-product');
+
+
+            if (imgtodrag.length) {
+                var imgclone = imgtodrag.clone()
+                    .offset({
+                        top: imgtodrag.offset().top,
+                        left: imgtodrag.offset().left
+                    })
+                    .css({
+                        'opacity': '0.5',
+                        'position': 'absolute',
+                        'height': '150px',
+                        'width': '150px',
+                        'z-index': '100'
+                    })
+                    .appendTo($('body'))
+                    .animate({
+                        'top': cart.offset().top + 10,
+                        'left': cart.offset().left + 10,
+                        'width': 75,
+                        'height': 75
+                    }, 1000, 'easeInOutExpo');
+
+                //setTimeout(function () {
+                //    cart.effect("shake", {
+                //        times: 2
+                //    }, 200);
+                //}, 1500);
+
+                imgclone.animate({
+                    'width': 0,
+                    'height': 0
+                }, function () {
+                    $(this).detach()
+                });
+            }
+        }
+
+    </script>
+<script>function updateCartItemCount() {
+    // Retrieve the current cart from localStorage
+    let cart = localStorage.getItem('albarkacart');
+    
+    // Parse the cart if it exists, otherwise set it to an empty object
+    cart = cart ? JSON.parse(cart) : {};
+   console.log(cart)
+    // Get the length of the dictionary
+    let itemCount = Object.keys(cart).length;
+
+    // Update the content of #numberitem and #numberitemMobile
+    document.getElementById('numberitem').textContent = itemCount;
+    document.getElementById('numberitemMobile').textContent = itemCount;
+} 
+updateCartItemCount()  </script>
+</body>
+</html>

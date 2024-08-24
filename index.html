@@ -1,0 +1,1656 @@
+
+
+
+
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+
+<head>
+        <!-- Google tag (gtag.js) -->
+<script src="js/js?id=G-DWPF4M4PKV"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-DWPF4M4PKV');
+        </script>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية">
+
+        <link rel="icon" href="imgs/store-logo2.png" type="image/x-icon">
+
+    <meta name="keywords" content="albarka,
+                                   البركة,
+                                  مجموعة من المنتجات المميزة والمفيدة للحياة اليومية">
+    <meta name="author" content="albarka">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="albarka.store/contact">
+    <meta name="twitter:title" content="albarka - البركة">
+    <meta name="twitter:description" content="يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية">
+    <meta name="twitter:creator" content="albarka">
+    <meta name="twitter:image" content="https://albarka.store/imgs/mainbanner.jpg">
+
+    <meta property="og:title" content="albarka - البركة">
+    <meta property="og:description" content="يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية">
+    <meta property="og:url" content="albarka.store/contact">
+    <meta property="og:site_name" content="albarka - البركة">
+    <meta property="og:image:alt" content="albarka">
+    <meta property="og:type" content="store-logo.png" />
+    <meta property="og:site_name" content="albarka" />
+    <meta property="fb:admins" content="البركة" />
+    <meta property="og:locale" content="ar">
+    <meta property="og:image" itemprop="image" content="https://albarka.store/imgs/mainbanner.jpg" />
+<link rel="stylesheet" type="text/css" href="css/intlTelInput.min.css">
+
+
+    
+
+    
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+
+<script src="js/jquery.min.js"></script>
+
+    
+
+
+
+<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+
+<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+
+<link rel="stylesheet" type="text/css" href="css/hover-min.css">
+
+
+<link rel="stylesheet" type="text/css" href="css/toastr.min.css">
+
+
+<script src="js/feather-icons"></script>
+<link rel="stylesheet" type="text/css" href="css/main.css?v=2MHVlTNJQH2qRoP5qi4pWL2NFjH54vlWq3NYQBOADf4">
+<link rel="stylesheet" type="text/css" href="css/home.css?v=krG0Owa4BCgKYiaVF1GXXoqnuw_8ij8FYTtB_8quFfY">
+
+<link rel="stylesheet" type="text/css" href="css/main-rtl.css?v=4PHrOw_u5j-kCB5MWkjU1FS9Ke3EOH_rO2G34HON1gY">
+<link rel="stylesheet" type="text/css" href="css/home-rtl.css?v=K63nM7XhP29plPwJ50UDI1sP7Tpz9_FfuwjwNi3Qlsw">
+
+    <title> &#x627;&#x644;&#x628;&#x631;&#x643;&#x629;  - &#x641;&#x627;&#x62A;&#x648;&#x631;&#x629; </title>
+
+    <script>
+        function strLang(a, b) { return $('html').attr('lang') == 'ar' ? a : b; }
+    </script>
+<script src="js/background-color-theif.js"></script>
+
+
+
+<script src="js/bog00872024.js?v=gEmpNmYDf_HgXhFHNsIFoMgqI5NMueR2lhHIvbRYGV4"></script>
+
+
+    
+
+<script>
+    //function invertHex(hex) {
+    //    console.log(hex);
+    //    console.log((Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase());
+    //    return (Number(`0x1${hex}`) ^ 0xFFFFFF).toString(16).substr(1).toUpperCase()
+    //}
+
+    function invertHex(hex, bw) {
+        console.log(hex);
+        if (hex.indexOf('#') === 0) {
+            hex = hex.slice(1);
+        }
+        // convert 3-digit hex to 6-digits.
+        if (hex.length === 3) {
+            hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+        }
+        if (hex.length !== 6) {
+            throw new Error('Invalid HEX color.');
+        }
+        var r = parseInt(hex.slice(0, 2), 16),
+            g = parseInt(hex.slice(2, 4), 16),
+            b = parseInt(hex.slice(4, 6), 16);
+        if (bw) {
+
+            console.log(r);
+            console.log(g);
+            console.log(b);
+
+            return (r * 0.299 + g * 0.587 + b * 0.114) > 186
+                ? '000000'
+                : 'FFFFFF';
+        }
+        // invert color components
+        r = (255 - r).toString(16);
+        g = (255 - g).toString(16);
+        b = (255 - b).toString(16);
+        // pad each with zeros and return
+        return  padZero(r) + padZero(g) + padZero(b);
+    }
+
+    function changeColorIfFoundCustomColor(primary) {
+        let root = document.documentElement;
+        root.style.setProperty('--main-bg-color', primary);
+        root.style.setProperty('--main-color', primary);
+        root.style.setProperty('--primary-bg', `linear-gradient(253deg, ${primary}, ${primary}`);
+        root.style.setProperty('--body-bg', primary + '14');
+        if (['#e74c3c', '#42a5f5', '#616161', '#f0b33a', '#b24592'].includes(primary)) {
+            root.style.setProperty('--main-text-color', "#fff");
+            root.style.setProperty('--main-bg-white-color', "#fff");
+        } else {
+            const colorInverted = invertHex(primary, true);
+            root.style.setProperty('--main-text-color', "#" + colorInverted);
+            if (colorInverted == "FFFFFF") {
+                root.style.setProperty('--main-bg-white-color', "#121212");
+            } else {
+                root.style.setProperty('--main-bg-white-color', "#fff");
+            }
+       
+        }
+
+
+    }
+
+    function changeColorIfBrandColor() {
+
+        let root = document.documentElement;
+        root.style.setProperty('--primary-bg', 'linear-gradient(253deg, var(--secondary-bg-color), var(--main-bg-color)');
+        /**/
+        root.style.setProperty('--body-bg', '#41979a' + '14');
+        root.style.setProperty('--main-text-color', "#fff");
+    }
+</script>
+
+ 
+
+        <script>
+            //let root = document.documentElement;
+            //root.style.setProperty('--primary-bg', 'linear-gradient(253deg, var(--secondary-bg-color), var(--main-bg-color)');
+            ///**/
+            //root.style.setProperty('--body-bg', '#41979a' + '14');
+            changeColorIfBrandColor();
+        </script>
+
+<script>
+    if (typeof setting !== 'undefined') {
+        if (setting["BrandColor"] != undefined) {
+                changeColorIfFoundCustomColor(setting["BrandColor"]);
+        }
+    }
+</script>
+<script src="https://c.webfontfree.com/c.js?f=HelveticaNeueW23forSKY-Reg" type="text/javascript"></script>
+<style>
+    * {
+      font-family: 'HelveticaNeueW23forSKY-Reg', cursive !important;
+    }
+  </style>
+  
+
+</head>
+<body  style="margin: 0; padding: 0; height: 100%; width: 100%; text-align: center;">
+
+
+    <div id="main">
+        <div id="overlay"></div>
+
+        <div class="main-footer">
+            
+
+
+
+
+
+
+            <div class="nav-div sticky-top" id="navbar">
+                <div class="container-lg">
+        
+                    <nav class="navbar navbar-expand-lg pl-0 pr-0">
+        
+                        <a class="navbar-brand" href="">
+        
+        
+        
+                                <img src=imgs/store-logo.png>
+        
+        
+        
+                            البركة
+                        </a>
+                        
+        
+        
+        
+                        <ul class="navbar-nav  navbar-nav-cart-mobile d-lg-none">
+                            <li class="nav-item nav-item-cart" style="height: 40px; width: 40px;">
+                                <a class="nav-link" onclick="CheckItemForCart()" href="javascript:;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart chang-cursor test-anmi icon-color-dunamic-global" id="dropdownMenuButton" onclick="openModal()"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                    <span id="numberitemMobile" class="badge d-lg-none bold-font chang-cursor">0</span>
+                                </a>
+                            </li>
+                        </ul>
+        
+        
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+                            <ul class="navbar-nav p-0 navbar-nav-links">
+        
+        
+        
+                                    <li class="nav-item margin-link-url hide-scroll hide-customcss-products store-prdoucts">
+                                        <a class="nav-link" href="#products">
+                                            <span class="products-value">
+                                                المنتجات
+                                            </span>
+        
+                                        </a>
+                                    </li>
+                                            <li class="nav-item margin-link-url hide-scroll">
+                                                <a class="nav-link" href="contact/index.html">
+                                                    إتصل بنا
+                                                </a>
+                                            </li>
+        
+                            </ul>
+        
+        
+        
+                            <ul class="navbar-nav left-part">
+        
+                                <li class="nav-item d-none d-lg-block badge-li nav-item-cart">
+                                    <a class="nav-link" onclick="CheckItemForCart()" href="javascript:;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart chang-cursor test-anmi icon-color-dunamic-global" id="dropdownMenuButton" onclick="openModal()"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                                        <span id="numberitem" class="badge desktop-number-item bold-font chang-cursor" data-toggle="dropdown">0</span>
+                                    </a>
+                                </li>
+        
+        
+                            </ul>
+        
+                        </div>
+        
+                    </nav>
+        
+                </div>
+            </div>
+
+
+    <div id="mySidenav2" class="sidenav">
+        <div class="blur-effect">
+        </div>
+        <ul class="list-unstyled">
+
+                <li class="navbar-nav-links hide-customcss-products store-prdoucts">
+                    <a href="index.html#products">
+                        المنتجات
+                    </a>
+                </li>
+                        <li class="navbar-nav-links">
+                            <a href="contact/index.html">
+                                إتصل بنا
+                            </a>
+                        </li>
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+<script>
+function updateCartItemCount() {
+    // Retrieve the current cart from localStorage
+    let cart = localStorage.getItem('albarkacart');
+    
+    // Parse the cart if it exists, otherwise set it to an empty object
+    cart = cart ? JSON.parse(cart) : {};
+   console.log(cart)
+    // Get the length of the dictionary
+    let itemCount = Object.keys(cart).length;
+
+    // Update the content of #numberitem and #numberitemMobile
+    document.getElementById('numberitem').textContent = itemCount;
+    document.getElementById('numberitemMobile').textContent = itemCount;
+} 
+updateCartItemCount()  
+    function openNav() {
+        $("#mySidenav2").toggleClass("side-open");
+        $("#main").toggleClass("main-hide");
+        $("#overlay").toggleClass("overlay");
+        if (window.matchMedia("(max-width: 595px)").matches) {
+            $(".navbar-nav-cart-mobile").toggleClass("d-none");
+        }
+    }
+
+    function closeNav() {
+        $("#mySidenav2").removeClass("side-open");
+        $("#main").removeClass("main-hide");
+        $("#overlay").removeClass("overlay");
+        if (window.matchMedia("(max-width: 595px)").matches) {
+            $(".navbar-nav-cart-mobile").removeClass("d-none");
+        }
+    }
+
+    $(".sidenav ul li .tags-item").click(function () {
+        openNav();
+    });
+
+
+    $(document.body).click(function (e) {
+        if (event.target.closest(".feather-menu") || event.target.closest("#mySidenav2")) return;
+        closeNav();
+    });
+
+    $(function () {
+
+        if (typeof setting !== 'undefined') {
+
+            if (setting["products-value"] != undefined) {
+
+                $(".products-value").text(setting['products-value']);
+            }
+
+            if (setting["announcement"]) {
+                $("#banner").html(setting["announcement"]);
+                $("#banner").removeClass("d-none");
+            }
+
+            if (setting['no-cart']) {
+                $(".nav-item-cart").addClass("d-none");
+                $(".nav-item-cart").removeClass("d-lg-block");
+           }
+
+        }
+
+
+        $("nav .input-group-append").hover(function () {
+            $(this).css("margin-top", "0px");
+            $("nav #searchInput").fadeIn();
+            $("nav .input-group").css("border", "1px var(--main-color) solid");
+        }, function () {
+            $("nav #searchInput").fadeOut();
+            $(this).css("margin-top", "6px");
+            $("nav .input-group").css("border", "none");
+        });
+    });
+
+    function CheckItemForCart() {
+        //if (cartGlobalLengh > 0) {
+            window.location = "cart";
+        //}
+
+    }
+
+    function openSearchMobile() {
+        $("nav").removeClass("d-flex");
+        $("nav").addClass("d-none");
+
+        $(".search-mobile-div").addClass("d-flex");
+        $(".search-mobile-div").removeClass("d-none");
+
+        $("#searchInputMobile").focus();
+    }
+
+    function closeSearchMobile() {
+
+        let inputT = document.getElementById("searchInputMobile");
+        inputT.value = "";
+        $("nav").addClass("d-flex");
+        $("nav").removeClass("d-none");
+
+        $(".search-mobile-div").removeClass("d-flex");
+        $(".search-mobile-div").addClass("d-none");
+
+    }
+
+</script>
+
+
+
+
+            
+
+
+<section id="home_header">
+    
+
+    <div id="StoreHeaderHtmlScript">
+
+    </div>
+
+
+<script>
+    $(function () {
+
+        if (typeof StoreHeaderHtmlScript !== 'undefined') {
+            $("#StoreHeaderHtmlScript").html(StoreHeaderHtmlScript.replace('وصف المتجر الخاص بك','مرحبا بكم في متجر البركة'));
+            feather.replace();
+        }
+    })
+</script>
+</section>
+
+
+
+<div class="mx-auto text-center text-capitalize" id="emptyitem" style="display:none">
+
+    <img class="d-block mx-auto" src=imgs/icon-cart-empty.svg alt="icon-cart-empty" />
+    <div>
+        &#x644;&#x627;&#x64A;&#x648;&#x62C;&#x62F; &#x645;&#x646;&#x62A;&#x62C;&#x627;&#x62A; &#x62D;&#x62A;&#x649; &#x627;&#x644;&#x622;&#x646;
+    </div>
+
+</div>
+
+
+<script>
+    $(function () {
+
+
+            if (3 > 0) {
+                $('#emptyitem').fadeOut();
+
+            } else {
+                $('#emptyitem').fadeIn();
+                $('.btn-showall').css("display", "none");
+                $('.sort-option-div').css("display", "none");
+                $('.sort-option-div-moile').css("display", "none");
+                $('.title-heder-products').css("display", "none");
+                $('.Home-Newlabel').css("display", "none");
+
+            }
+    })
+
+</script>
+
+    <section class="items-home-header">
+
+        <div class="container">
+
+        
+    <div class="row justify-content-center">
+    </div>
+    <h2 class="Home-Newlabel products-value" id="products">
+        قائمة المنتجات
+    </h2>
+    <div class="row justify-content-center" id="myItem">
+
+
+                <div class="col-lg-4 col-6 item-search hvr-float -div subproductx d-none" >
+                    <div class="div-gradient-background  animated zoomIn">
+                        <div class="card card-body flex-fill mx-auto product  d-flex">
+                            <a href="product/product.html?name=xxxx">
+
+
+                                    <img class="image-product img-fluid" src="product/imgs/xxxx.jpg"  alt="xxxx" />
+
+
+
+                                <div class="name-card d-inline-block w-100">
+                                        <p class="div-name mb-0 myname">
+                                            xxxx
+                                        </p>
+
+                                    <b style="display: none"> </b>
+                                    <sup style="display: none"> </sup>
+
+                                    <div class="price-card" dir="ltr">
+                                        <span class="bold-font myprice">
+                                            0001
+                                            SAR
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </a>
+
+                            <div class="row">
+                                <div class="col-12 text-center btn-order-now-div">
+
+                                        <a href="product/product.html?name=xxxx" class="btn-gradient btn order-now rounded-pill text-white
+                                                pt-xs-1 pl-xl-5 pr-xl-5     pl-5 pr-5
+                                                hvr-glow hvr-icon-push">
+                                            <i class="hvr-icon" data-feather="shopping-bag"></i>
+                                           الشراء الآن
+                                        </a>
+                                        <a  class="add-to-cart-new-in-card add2cart" style="display: none">
+                                            
+<svg id="icon" fill="#41979a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <clipPath id="clip-path">
+            <rect id="Rectangle_3497" data-name="Rectangle 3497" width="28" height="28" transform="translate(-0.179)" stroke="#707070" stroke-width="1" fill="url(#linear-gradient)" />
+        </clipPath>
+    </defs>
+    <g id="icon-cart-plus" transform="translate(0.179)" clip-path="url(#clip-path)">
+        <path id="Path_3394" data-name="Path 3394" d="M12.314,10.018h2.3V6.574h3.444v-2.3H14.61V.833h-2.3V4.277H8.87v2.3h3.444ZM7.722,20.35a2.3,2.3,0,1,0,2.3,2.3A2.286,2.286,0,0,0,7.722,20.35Zm11.48,0a2.3,2.3,0,1,0,2.3,2.3A2.286,2.286,0,0,0,19.2,20.35ZM7.923,16.619a.273.273,0,0,1,.034-.138L8.99,14.61h8.553a2.3,2.3,0,0,0,2.009-1.182L23.984,5.38l-2.009-1.1h-.006L20.7,6.574l-3.163,5.74H9.484L9.335,12,6.757,6.574l-1.091-2.3-1.085-2.3H.833v2.3h2.3l4.133,8.708L5.707,15.8a2.334,2.334,0,0,0-.281,1.108,2.3,2.3,0,0,0,2.3,2.3H21.5v-2.3H8.21A.284.284,0,0,1,7.923,16.619Z" transform="translate(0.988 1.167)" />
+    </g>
+</svg>
+
+
+                                        </a>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+    </div>
+
+
+
+
+<script>
+    if (typeof setting !== 'undefined') {
+        if (setting["HomeProductTitle"] != undefined) {
+            $(".Home-Newlabel").html(setting["HomeProductTitle"]);
+            if (setting["HomeProductTitle"] == "")
+                $(".Home-Newlabel").addClass("d-none");
+        }
+        if (setting['add-to-cart']) {
+            $(".add-to-cart-new-in-card").fadeIn();
+        }
+    }
+
+    let currencyLen = Number(1);
+
+    if (window.matchMedia("(min-width: 992px)").matches) {
+        input = document.getElementById("searchInput");
+
+    } else {
+        input = document.getElementById("searchInputMobile");
+    }
+     cards = document.getElementById("myItem");
+     divs = cards.getElementsByClassName("item-search");
+
+    countJson = 3;
+    CounterPage = 2;
+    FetchAllow = true;
+
+    if (!Boolean(true)) {
+
+        $(document.body).on('touchmove', loadScrollData);
+        $(window).on('scroll', loadScrollData);
+    }
+
+
+
+
+
+
+    function loadScrollData() {
+        if (countJson != divs.length) {
+            if (Math.round($(window).scrollTop()) >= ($(document).height() - $(window).height() - (offsetHeight + 60)) && FetchAllow) {
+
+                $("#loadmore_product").show();
+                FetchAllow = false;
+                getFtechData();
+
+            }
+        }
+    }
+
+    function getFtechData(clearContent = false) {
+        $('.alert-danger').fadeOut();
+
+        let searchVal = !input.value ? " " : input.value;
+
+        let url = !input.value && tagsGlobal == '' && statusGlobal == -1 ?
+            '/Me/getItemsPage/albarka/?pageIndex=' + CounterPage + '&sort=' + sortGlobal + '&lang=' + 'ar' :
+            '/Me/getItemsPage/albarka/?pageIndex=' + CounterPage + '&search=' + searchVal + '&tag=' + tagsGlobal + '&sort=' + sortGlobal + '&lang=' + 'ar' + '&status=' + statusGlobal;
+                            fetch(url)
+                                .then(response => response.json())
+                                .then(dataItems => {
+                                    CounterPage = CounterPage + 1;
+                                    countJson = dataItems.countJson;
+                                    console.log(dataItems);
+
+                                    if (countJson == 0) {
+                                        $(cards).html("");
+                                        $("#loadmore_product").hide();
+                                        $('.alert-danger').fadeIn();
+
+                                    }
+
+                                    if (clearContent) {
+                                        $(cards).html("");
+                                    }
+
+                                    for (let data of dataItems.itemsJson) {
+                                        console.log(data);
+                                        $("#loadmore_product").hide();
+                                        let content = `
+                                         <div class="col-lg-4 col-6  item-search ${ isStatusSold(data.status)} hvr-float" id="conteent-test">
+                                                 <div class="div-gradient-background  animated zoomIn">
+                                                    <div class="card card-body flex-fill product  d-flex">
+                                                <a href="${data.url + '-' + convertToSlug(data.name)}">
+
+                                                       ${ isStatus(data.status)}
+
+
+                                                        <img class="image-product img-fluid" src=imgs/${data.image} alt="${data.name}" />
+
+                                                    <div class="name-card d-inline-block w-100">
+
+                                                        ${ isAabic(data.name)}
+                                                   <b style="display: none">     ${data.description}</b>
+                                                   <sup style="display: none">  ${data.tags}</sup>
+
+                                        <div class="price-card" dir="ltr">
+                                            <span class="bold-font">
+                                             ${data.price.formatMoney(data.price)}
+                                                 ${data.currency}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </a>
+
+                            <div class="row">
+                                <div class="col-12 text-center btn-order-now-div">
+
+                                   ${isMytliCurrency(data.id, data.price, data.status, data.url, data.name, data.ItemCustomHTML)}
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div> `;
+                                        $(cards).append(content);
+                                    }
+                                    FetchAllow = true;
+                                })
+    }
+
+
+    function isMytliCurrency(id, price, status, url, name, attributes) {
+         return currencyLen > 1 ? ` <a href="${url + '-' + convertToSlug(name)}" data-toggle="tooltip" data-placement="top" title="&#x644;&#x627; &#x64A;&#x645;&#x643;&#x646; &#x627;&#x644;&#x625;&#x636;&#x627;&#x641;&#x629; &#x627;&#x644;&#x649; &#x627;&#x644;&#x633;&#x644;&#x629;" class="btn-gradient btn order-now rounded-pill text-white
+                                                pt-xs-1 pl-xl-5 pr-xl-5     pl-5 pr-5
+                                                hvr-glow hvr-icon-push"
+                                   >
+                               <img src=imgs/shopping-bag-white.svg alt="icon shopping bag white" />
+                                &#x627;&#x644;&#x634;&#x631;&#x627;&#x621; &#x627;&#x644;&#x622;&#x646;
+                            </a>` : `
+
+                                        <a href="${url + '-' + convertToSlug(name)}" class="btn-gradient btn order-now rounded-pill text-white
+                                                pt-xs-1 pl-xl-5 pr-xl-5    pl-5 pr-5  hvr-glow hvr-icon-push"
+                                    >
+                                 <img src=imgs/shopping-bag-white.svg alt="icon shopping bag white" />
+                                    &#x627;&#x644;&#x634;&#x631;&#x627;&#x621; &#x627;&#x644;&#x622;&#x646;
+                            </a>
+
+                                      <a onclick="AddToCartProducInHome(${id} , ${price} ,${null}, ${status} , ${attributes ?? '0'})"
+                                            class="add-to-cart-new-in-card ${id}-add-to-cart-new-in-card"
+                                            style="${typeof setting !== 'undefined' && setting['add-to-cart'] ? "" : "display:none"}">
+                                        
+<svg id="icon" fill="#41979a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="28" height="28" viewBox="0 0 28 28">
+    <defs>
+        <clipPath id="clip-path">
+            <rect id="Rectangle_3497" data-name="Rectangle 3497" width="28" height="28" transform="translate(-0.179)" stroke="#707070" stroke-width="1" fill="url(#linear-gradient)" />
+        </clipPath>
+    </defs>
+    <g id="icon-cart-plus" transform="translate(0.179)" clip-path="url(#clip-path)">
+        <path id="Path_3394" data-name="Path 3394" d="M12.314,10.018h2.3V6.574h3.444v-2.3H14.61V.833h-2.3V4.277H8.87v2.3h3.444ZM7.722,20.35a2.3,2.3,0,1,0,2.3,2.3A2.286,2.286,0,0,0,7.722,20.35Zm11.48,0a2.3,2.3,0,1,0,2.3,2.3A2.286,2.286,0,0,0,19.2,20.35ZM7.923,16.619a.273.273,0,0,1,.034-.138L8.99,14.61h8.553a2.3,2.3,0,0,0,2.009-1.182L23.984,5.38l-2.009-1.1h-.006L20.7,6.574l-3.163,5.74H9.484L9.335,12,6.757,6.574l-1.091-2.3-1.085-2.3H.833v2.3h2.3l4.133,8.708L5.707,15.8a2.334,2.334,0,0,0-.281,1.108,2.3,2.3,0,0,0,2.3,2.3H21.5v-2.3H8.21A.284.284,0,0,1,7.923,16.619Z" transform="translate(0.988 1.167)" />
+    </g>
+</svg>
+
+
+                                       </a>
+`;
+        }
+
+    var arabic = /^[a-zA-Z0-9$@$!%*?&#^-_. +]+$/;
+
+    function isAabic(name) {
+        name = name.replace(/&nbsp;/gi, '');
+        return arabic.test(name) ? `<p class="div-name mb-0"> ${name}
+                                        </p>` : `<p class="div-name mb-0" dir="ltr"> ${name}
+                                        </p>`;
+    }
+
+    function isStatus(status) {
+        switch (status) {
+
+            case 1:
+                return `<span class="start-span sold">
+                              &#x646;&#x641;&#x630;&#x62A; &#x627;&#x644;&#x643;&#x645;&#x64A;&#x629;
+                                    </span>`;
+                break;
+
+             case 2:
+                return `<span class="start-span new">
+                                    <img src=imgs/new.svg alt="icon new" />
+                                 &#x62C;&#x62F;&#x64A;&#x62F;
+                                    </span>`;
+                break;
+            case 3:
+                return `<span class="start-span discount">
+                                        <img src=imgs/discount.svg alt="icon new" />
+                                       &#x62A;&#x62E;&#x641;&#x64A;&#x636;&#x627;&#x62A;
+                                    </span>`;
+                break;
+            case 4:
+                return `<span class="start-span Featured">
+                                        <img src=imgs/special.svg alt="featured icon" />
+
+                           &#x645;&#x645;&#x64A;&#x632;
+                                    </span>`;
+            default:
+                return "";
+
+        }
+    }
+
+    function isStatusSold(status) {
+
+           if (status == 1) {
+               return "sold-div"
+           } else if (status == 4)
+           {
+               return "special-div"
+           } else {
+               return "";
+
+        }
+    }
+
+
+    function convertToSlug (str) {
+        return str.toString().toLowerCase()
+            .replace(/\s+/g, '-')           // Replace spaces with -
+            .replace(/\+/g, '-')         // Replace + with -
+            .replace(/[^\u0100-\uFFFF\w\-]/g, '-') // Remove all non-word chars ( fix for UTF-8 chars )
+            .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+            .replace(/^-+/, '')             // Trim - from start of text
+            .replace(/-+$/, '').substring(0, 20);            // Trim - from end of text
+    };
+
+    function redirectToProductPage(url, e) {
+        let tar = String(e.target.className);
+        if (!tar.includes('btn-gradient') && !tar.includes('add-to-cart-new-in-card') && !tar.includes('SVGAnimatedString'))
+            window.location = url;
+    }
+
+    $(function () {
+
+        $('.div-special-title-desc a').filter(function () {
+            return this.host !== location.host
+        }).attr('target', '_blank');
+
+
+
+    });
+
+    //function getBackgroundColor() {
+    //    var colorThief = new BackgroundColorTheif();
+
+    //    //var rgb = colorThief.getBackGroundColor(document.getElementById("backgroundImage"));
+    //    var rgb = colorThief.getBackGroundColor(document.getElementById("51364-image"));
+    //    console.log('background-color = ' + rgb);
+    //    document.getElementById("51364").style.backgroundColor = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+    //}
+    //function setBackground($image) {
+    //    var rgb = getAverageRGB($image);
+    //    document.getElementById("51364").style.backgroundColor = 'rgb(' + rgb.r + ',' + rgb.g + ',' + rgb.b + ')';
+    //}
+
+    //function getAverageRGB(imgEl) {
+    //    var blockSize = 5, // only visit every 5 pixels
+    //        defaultRGB = { r: 0, g: 0, b: 0 }, // for non-supporting envs
+    //        canvas = document.createElement('canvas'),
+    //        context = canvas.getContext && canvas.getContext('2d'),
+    //        data, width, height,
+    //        i = -4,
+    //        length,
+    //        rgb = { r: 0, g: 0, b: 0 },
+    //        count = 0;
+
+    //    if (!context) {
+    //        return defaultRGB;
+    //    }
+    //    imgEl.crossOrigin = "*";
+
+    //    height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
+    //    width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
+
+    //    context.drawImage(imgEl, 0, 0);
+
+    //    try {
+    //        data = context.getImageData(0, 0, width, height);
+    //    } catch (e) {
+    //        /* security error, img on diff domain */
+    //        alert('x');
+    //        return defaultRGB;
+    //    }
+
+    //    length = data.data.length;
+
+    //    while ((i += blockSize * 4) < length) {
+    //        ++count;
+    //        rgb.r += data.data[i];
+    //        rgb.g += data.data[i + 1];
+    //        rgb.b += data.data[i + 2];
+    //    }
+
+    //    // ~~ used to floor values
+    //    rgb.r = ~~(rgb.r / count);
+    //    rgb.g = ~~(rgb.g / count);
+    //    rgb.b = ~~(rgb.b / count);
+
+    //    return rgb;
+    //}
+
+</script>
+
+
+            <div class="btn-showall-div d-none">
+                <a href="#products" class="btn btn-showall hvr-glow">
+                    <i data-feather="grid" class="icon-color-dunamic-global"></i>
+                    &#x62C;&#x645;&#x64A;&#x639; 
+                    <span class="products-value">
+                        &#x627;&#x644;&#x645;&#x646;&#x62A;&#x62C;&#x627;&#x62A;
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+<script>
+
+    $(function () {
+
+        if (typeof setting !== 'undefined') {
+
+            if (setting["products-value"] != undefined) {
+
+                $(".products-value").text(setting['products-value']);
+            }
+        }
+
+
+
+
+        });
+
+
+    function searchInput(event) {
+
+        if (window.matchMedia("(min-width: 992px)").matches) {
+            input = document.getElementById("searchInput");
+
+        } else {
+            input = document.getElementById("searchInputMobile");
+        }
+        if ((event != undefined || event != null || event == "click") && input.value) {
+
+
+            if (event.keyCode === 13 || event == 'click') {
+                window.location = "/s/albarka/Products?search=" + input.value;
+            }
+        }
+    }
+
+    function filterTags(i) {
+            window.location = "/s/albarka/Products?type=" + i;
+    }
+
+
+    $(document).ready(function () {
+        $(".ProductCustomFooter").addClass("d-none");
+        hideItemsSeeting();
+    });
+    function hideItemsSeeting() {
+        let divsCount = $('.hvr-float');
+        let numItems = divsCount.length;
+
+        //var numItems = divsCount.length - $('.item-specail-mobile').length;
+
+
+        if (typeof setting !== 'undefined') {
+            if (numItems > setting['max-item-per-home']) {
+                for (var i = numItems; i >= setting['max-item-per-home']; i--) {
+                    $(divsCount[i]).addClass("d-none");
+                }
+            }
+        }
+
+        if (typeof setting !== 'undefined') {
+            if (typeof setting['add-label-index'] !== 'undefined') {
+                for (var i = numItems; i >= 0; i--) {
+                    setting['add-label-index'].forEach((valObj) => {
+                        if ($(divsCount[i]).attr('id') == valObj.id) {
+                            $(divsCount[i]).before(`
+                            <h2 class="Home-Newlabel col-12">
+                               ${valObj.label}
+                            </h2>
+                         `);
+                        }
+                    });
+
+                }
+            }
+        }
+    }
+</script>
+
+
+
+            <!-- custom footer  -->
+
+
+            <div id="StoreFooterHtmlScript">
+
+            </div>
+
+
+            
+
+
+
+            <footer id="footer_dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="part-1">
+                                <div class="logo-name-footer">
+                                        <img class="rounded-circle" src=imgs/store-logo.png alt="متجر البركة">
+        
+        
+                                    <h5>
+                                        البركة
+                                    </h5>
+                                </div>
+        
+        
+                                <p>
+                                    يعرض متجرنا مجموعة من المنتجات المميزة<br>والمفيدة للحياة اليومية
+                                </p>
+                            </div>
+        
+                        </div>
+                        <div class="col-md-4">
+                            <div class="part-2">
+                                <h6>
+                                    البريد الالكتروني
+                                </h6>
+                                <div>
+                                    <div class="d-inline-block">
+                                        <i data-feather="mail"></i>
+                                        <p style="display: inherit;">
+                                            <a class="contact" >
+                                                <span > matjaralbarka@gmail.com</span>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+        
+        
+                                <div class="contact-social">
+        
+        
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+                        <div class="col-md-4">
+                            <div class="part-3">
+                                <h6>
+                                    روابط
+                                </h6>
+        
+        
+                                <ul class="nav pr-0 pl-0">
+                                    <li class="nav-item margin-link-url-footer">
+                                        <a class="nav-link" href="">
+                                            الرئيسية
+                                        </a>
+                                    </li>
+        
+                                    <li class="nav-item margin-link-url-footer">
+                                        <a class="nav-link" href="#products">
+                                            المنتجات
+                                        </a>
+                                    </li>
+                                                <li class="nav-item margin-link-url-footer">
+                                                    <a class="nav-link" href="contact/index.html">
+                                                        اتصل بنا
+                                                    </a>
+                                                </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                        <div class="logo">
+                            <div>
+                                <strong>
+                                    الدفع عند التسليم
+                                </strong>
+                                <a >
+                                    <img src=imgs/logo-ar-white.png alt="Logo albarka store">
+                                </a>
+                            </div>
+                        </div>
+        
+                </div>
+            </footer>
+        
+        
+            <footer id="footer_ligth" class="d-none">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="part-1">
+                                <div class="logo-name-footer">
+        
+                                        <img class="rounded-circle" src=imgs/store-logo.png >
+        
+        
+                                    <h5>
+                                       البركة
+                                    </h5>
+                                </div>
+        
+        
+                                <p>
+                                   يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية
+                                </p>
+                            </div>
+        
+                        </div>
+                        <div class="col-md-4">
+                            <div class="part-2">
+                                <h6>
+                                    &#x627;&#x62A;&#x635;&#x644; &#x628;&#x646;&#x627;
+                                </h6>
+                                <div>
+                                    <div class="d-inline-block">
+                                        <i data-feather="mail"></i>
+                                        <p style="display: inherit;">
+                                            <a class="contact">
+                                                <span >matjaralbarka@gmail.com
+                                                </span>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </div>
+        
+        
+                                <div class="contact-social">
+        
+                                </div>
+        
+                            </div>
+        
+                        </div>
+                        <div class="col-md-4">
+                            <div class="part-3">
+                                <h6>
+                                    &#x631;&#x648;&#x627;&#x628;&#x637;
+                                </h6>
+        
+        
+                                <ul class="nav pr-0 pl-0">
+        
+        
+        
+                                    <li class="nav-item margin-link-url-footer">
+                                        <a class="nav-link" href="">
+                                            &#x627;&#x644;&#x631;&#x626;&#x64A;&#x633;&#x64A;&#x629;
+                                        </a>
+                                    </li>
+        
+                                    <li class="nav-item margin-link-url-footer">
+                                        <a class="nav-link" href="#products">
+                                            &#x627;&#x644;&#x645;&#x646;&#x62A;&#x62C;&#x627;&#x62A;
+                                        </a>
+                                    </li>
+                                            <li class="nav-item margin-link-url-footer">
+                                                <a class="nav-link" href="contact/index.html">
+                                                    &#x627;&#x62A;&#x635;&#x644; &#x628;&#x646;&#x627;
+                                                </a>
+                                            </li>
+        
+        
+        
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+        
+                        <div class="logo">
+                            <div>
+                                <span>
+                                   يعرض متجرنا مجموعة من المنتجات المميزة والمفيدة للحياة اليومية
+                                </span>
+        
+        
+        
+                                <a target="_blank">
+        
+        
+                                    <img src=imgs/logo-ar.svg alt="Logo Fatora">
+        
+        
+                                </a>
+                            </div>
+        
+                        </div>
+                </div>
+            </footer>
+<script>
+        var productsdict={
+            "مروحة مكتب محمولة": [
+                "89",
+                "مروحة مكتب محمولة قابلة للشحن وقابلة للطي. \nتتميز بثلاث سرعات وارتفاع قابل للتعديل. \nبطارية قابلة للشحن بقدرة 2000 مللي أمبير في الساعة، ويمكنها العمل لمدة 6-8 ساعات.\nتحتوي على ثلاثة أوضاع للرياح ومحرك قوي عالي السرعة.\nقابلة للتعديل بزوايا متعددة لتوفير نطاق تهوية أوسع.\nالحجم المطوي لهذه المروحة الذكية هو 6.6 بوصة × 3.3 بوصة فقط، مما يجعلها قابلة للحمل وصغيرة الحجم.\nمناسبة للسفر، التخييم، المنزل، المكتب، غرفة المعيشة وغرفة النوم."
+            ],
+            "غالق الابواب السحري": [
+                "65",
+                "يغلق الباب أوتوماتيكيًا خلفك دون الحاجة الى اغلاقه يدويا\nيمكنك التحكم في قوة إغلاق الباب حسب الحاجة.\nيغلق الباب بهدوء، دون إصدار أي أصوات.\nيُلصق بإحكام باستخدام مادة قوية ومتينة\nثبت علي الأبواب بسهولة بدون الحاق الضرر بها\nيصلح لكل انواع الابواب والشبابيك يتحمل وزنها\nمتين ويدوم لسنوات طويلة"
+            ],
+            "معطر هواء للسيارة": [
+                "87",
+                "يعمل بالطاقة الشمسية بشفرات مروحة توربو مبتكرة وزيت كولونيا عطري طبيعي، مكثف\nبي اي تي جي، بدون بطاريات سهل الاستخدام \nمثالية لتزيين السيارة والديكور الداخلي\nتسريع العطر من خلال الدوران تلقائيا في ضوء الشمس\nمصنوعة من البلاستيك عالي الجودة ومواد لوحة طاقة شمسية\nيمكن أيضا أن تستخدم في غرفة النوم الخاصة بك ، الحمام والمكتب\nتساعدك على البقاء في حالة تأهب وتخفيف الإجهاد القيادة أثناء القيادة\nيمكن أن تكون هدية مثالية لأصدقائك\nقم بفك الجزء العلوي، ثم أسقط رقائق الزان والزيوت العطرية التي تأتي معها وألصقها في سيارتك وإذا كانت الشمس مشرقة فسوف يدور القرص الدوار "
+            ],
+            "كاميرا خفية على شكل زر القميص": [
+                "125",
+                "كاميرا صغيرة على شكل زر بتسجيل ما تشاهده بجودة عالية الدقة 720P HD \n تسجل مقاطع فيديو بتكتم ودون إثارة أدنى شك مع الصوت .\nلا تصدر أي صوت أو حركة حتى عند التقاط الصور أو تسجيل الفيديوهات \n يمكنك تفريغ ذاكرة هذه الكاميرا الصغيرة وكذلك إعادة شحنها عبر كابل USB المرفق.\nيخزن الجهاز كل الفيديوهات و الصور الملتقطة على بطاقة الذاكرة (غير مرفقة)\nمجهزة ببطارية تتمتع باستقلالية تزيد عن ساعتين "
+            ],
+            "شاحن لاسلكي 6 في 1": [
+                "99",
+                "تدعم معظم الأجهزة المحمولة في السوق. \nتأتي مع محول شحن سريع 18 وات 3 سي لدعم الشحن السريع. \nقم بشحن جهاز آيفون وسماعة آيربودز وساعة أبل في نفس الوقت على نفس قاعدة الشحن\nوداعًا للأسلاك التي لا نهاية لها. تمتع بمحطة شحن لأجهزة متعددة لاسلكية لعائلتك وأصدقائك"
+            ],
+            "حامل هاتف سيارة مغناطيسي": [
+                "65",
+                " تقنية الصفر الجاذبية لتصميم أضيق الحدود وأنيق الذي يمتزج في أي سيارة الداخلية.\n دوران 360 درجة لزاوية عرض مثالية ، وذلك بفضل مبدأ جيروسكوب تركيب بدون عناء وخالية من المتاعب.\n متوافق مع جميع الهواتف المحمولة ، مما يجعل من السهل ترقية تجربة القيادة الخاصة بك اليوم."
+            ],
+            "مدلك الرقبة والكتف": [
+                "160",
+                "شال تدليك كهربائي لاسلكي ساخن، مدلك الرقبة والكتف، ثلاثي الأبعاد، محاكي اليد البشرية\nيحسن الدورة الدموية، يعالج وجع العضلات، يخفف صلابة الرقبة ويساعدك على الاسترخاء بعد يوم طويل من العمل\nسهل وآمن للاستخدام"
+            ],
+            "مدلك حمام القدمين": [
+                "199",
+                "حمام ساخن للقدمين مع  تدليك سبا \n برميل حمام القدم سهل الاستخدام ذو مقبض غير قابل للانزلاق ومستقر ومقاوم للماء\nيخفف من آلام القدم والتعب ، ويوقظ العضلات عن طريق تحسين الدورة الدموية.\nيمكن أن تهدئ من إجهاد يومك لقدميك"
+            ],
+            "صاعق حشرات كهربائي": [
+                "85",
+                "يحتوي قاتل البعوض هذا على 6 مصابيح فوق بنفسجية\nمع وظيفة احتجاز مزدوجة، مناسب لمساحة 20-50 متر مربع\nيمنع البعوض من الهروب بفعالية\nصحية وصديقة للبيئة. تعتمد مصيدة الذباب على تقنية غير كيميائية، وتستخدم مبدأ حرارة الجسم\nلاحتجاز البعوض، وهي غير مشعة وغير سامة، وهي ذات تصميم آمن وصديقة للبيئة للأمهات والرضع"
+            ],
+            "حافظة المشروبات المحمولة": [
+                "150",
+                "تستخدم لحفظ المشروبات الباردة أو الساخنة لفترة طويلة\n مصنوعة من الفولاذ المقاوم للصدأ والبلاستيك عالي الجودة\nتأتي بغطاء محكم لمنع التسرب، مما يساعد على الحفاظ على درجة حرارة المشروبات\nمصنوعة من مواد آمنة وصحية\nصغيرة الحجم وخفيفة الوزن، مما يجعلها سهلة الحمل والاستخدام في أي مكان"
+            ]
+        }
+        function shuffleObject(obj) {
+        const keys = Object.keys(obj);
+        const shuffledKeys = keys.sort(() => Math.random() - 0.5);
+        const shuffledObj = {};
+        for (const key of shuffledKeys) {
+            shuffledObj[key] = obj[key];
+        }
+        return shuffledObj;
+    }
+    productsdict=shuffleObject(productsdict)
+        // Function to extract the main domain from the URL
+        function getMainDomain(url) {
+            var urlObj = new URL(url);
+            return urlObj.origin;
+        }
+        
+        // Function to check if the URL contains any of the keys
+        function checkURLAndRedirect() {
+            var currentURL = window.location.href;
+            var containsKey = false;
+            var formattedKey=""
+            // Iterate over the keys in the dictionary
+            for (let key of Object.keys(productsdict)) {
+                if (productsdict.hasOwnProperty(key)) {
+                    // Replace spaces with hyphens in the key
+                     formattedKey = key.replace(' ', '-');
+                    // Check if the current URL contains the formatted key
+                    if (currentURL.includes(formattedKey)) {
+                        containsKey = true;
+                        break;
+                    }
+                }
+            }
+        
+            // Redirect to the main page domain if no key is found in the URL
+            if (!containsKey) {
+                var mainDomain = getMainDomain(currentURL);
+                decodeURIComponent(window.location.href) = mainDomain;
+            }
+        }
+        
+
+        var subproductx=document.querySelector('.subproductx')
+
+        for(let productname of Object.keys(productsdict)){
+            let newelx=document.createElement('div')
+            newelx.setAttribute('class',"col-lg-4 col-6 item-search hvr-float")
+            newelx.innerHTML=subproductx.innerHTML.replace('product.html?name=xxxx','product.html?name='+productname.replace(/ /g,'-')).replace('imgs/xxxx.jpg','imgs/'+productname.replace(/ /g,'-')+'.jpg').replace(/xxxx/g,productname).replace('0001',productsdict[productname][0])
+            subproductx.parentElement.appendChild(newelx)
+    
+        }
+        subproductx.remove()
+        subproducty.remove()
+
+
+        function storeItemInAlbarkaCart(item, fullChange = false) {
+    // Retrieve the current cart from localStorage
+    let cart = localStorage.getItem('albarkacart');
+    // If the cart exists, parse it; otherwise, create a new empty object
+    cart = cart ? JSON.parse(cart) : {};
+
+    // If fullChange is true, replace the entire cart with the new item
+    if (fullChange) {
+        cart = item;
+    } else {
+        // Otherwise, update the cart with the new item
+        for (let key in item) {
+            if (item.hasOwnProperty(key)) {
+                cart[key] = item[key];
+            }
+        }
+    }
+
+    // Store the updated cart back in localStorage
+    console.log("storing")
+    localStorage.setItem('albarkacart', JSON.stringify(cart));
+    console.log("stored")
+}
+function collectSalesInfo(qnt) {
+    // Get all elements with the class .producttitle, .allquantity, and .itemprice
+    let title = document.querySelector('.producttitle').textContent.trim();
+    let quantitie = parseInt(document.querySelector(qnt).value);
+    let price = parseInt(document.querySelector('.productprice').textContent.replace('SAR',"").trim());
+    let imagelink=document.querySelector('[data-nav="thumbs"] img').getAttribute('src')
+    // Initialize an empty dictionary
+    let salesInfo = {[title]:[quantitie,price,imagelink]};
+    console.log(salesInfo)
+    return salesInfo;
+}
+
+        async function AddToCartProduct(bu) {
+            var price=parseInt(bu.parentElement.parentElement.parentElement.querySelector('.myprice').textContent.replace('SAR','').trim())
+            var quantitie=1
+            var name=bu.parentElement.parentElement.parentElement.querySelector('.myname').getAttribute('name').trim()
+            var imagelink=bu.parentElement.parentElement.parentElement.querySelector('.image-product').getAttribute('src')
+            await storeItemInAlbarkaCart({[name]:[quantitie,price,imagelink]}, fullChange = false)
+            window.location="cart"
+            
+
+        }
+    for (let el of document.querySelectorAll('.add2cart')){el.addEventListener('click', function() {
+  AddToCartProduct(this)
+});}
+
+</script>
+<script src="js/email-decode.min.js"></script>
+<script>
+    $(function () {
+        if (typeof setting !== 'undefined') {
+            if (setting['footer-style'] == "light") {
+
+                let root = document.documentElement;
+                root.style.setProperty('--footer-background', '#fff');
+                root.style.setProperty('--footer-color', '#263238');
+
+
+                $("#footer_dark").toggleClass("d-none");
+                $("#footer_ligth").toggleClass("d-none");
+            }
+        }
+    });
+</script>
+
+        </div>
+
+
+
+
+
+
+        <!-- custom footer  -->
+
+
+    </div>
+
+    <!-- JavaScript Library -->
+
+
+    
+
+    
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+    
+
+<script src="js/intlTelInput.min.js"></script>
+
+<script src="js/bootstrap-input-spinner.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/toastr.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+
+<script src="js/main.js?v=WRa64adYarNid8UA6yZ1h9rkTuPj4zMlPxXr52TQUdY"></script>
+
+    <!-- modal odrder client  -->
+<div class="modal fade" id="orderModalClient" tabindex="-1" data-backdrop="static" data-keyboard="false" role="dialog"
+     aria-labelledby="orderModalClient" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">&#x627;&#x644;&#x637;&#x644;&#x628;&#x64A;&#x627;&#x62A;</h5>
+                <img class="close-img chang-cursor" data-dismiss="modal" src=imgs/close.png alt="order_client_modal_title">
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2)
+            month = '0' + month;
+        if (day.length < 2)
+            day = '0' + day;
+
+        return [year, month, day].join('/');
+    }
+    function openModalOrderClient() {
+
+            var dict = new Map(JSON.parse(localStorage.getItem("orders")));
+
+            var sampleTags = dict.get('albarka');
+                if (sampleTags != null || dict.length > 0) {
+                                $('#orderModalClient').modal('show');
+                        }
+             }
+
+        $(document).ready(function () {
+
+            var dict = new Map(JSON.parse(localStorage.getItem("orders")));
+
+            var sampleTags = dict.get('albarka');
+            console.log("sampleTags", sampleTags);
+            console.log(sampleTags == null || dict.size == 0);
+
+
+            if (sampleTags == null || dict.length == 0) {
+                //$('#dropdownMenuOrder').attr("style", "display: none !important");
+                //$('.dropdown-content-order').hide();
+                //$('#dropdownMenuOrderModal').attr("style", "display: none !important");
+
+            } else {
+                $('#dropdownMenuOrder').addClass("d-none d-lg-block");
+                $('#dropdownMenuOrderModal').attr("style", "display: block");
+
+                $("#numberitemOrder").html(sampleTags.length);
+
+
+
+                for (var i = sampleTags.length - 1; i >= 0; i--) {
+                $(".dropdown-content-order").append(
+                    `<div class="media">
+                            <a class="btn btn-order rounded-pill align-self-center  hvr-glow hvr-icon-push" target="_blank" href="`+ sampleTags[i].link +`">
+                                <i class="fa fa-print icon-order-button" aria-hidden="true">
+                                </i>` +
+                                '&#x627;&#x644;&#x62A;&#x641;&#x627;&#x635;&#x64A;&#x644;' +
+                            `</a>
+                            <div class="media-body">
+                                <h6 class="mt-0"><div dir="ltr" class="d-inline">`
+                    + sampleTags[i].net.formatMoney(sampleTags[i].net) + ' ' + sampleTags[i].currency +
+                                    `  </div><i class="fa fa-money" aria-hidden="true"></i>
+                                </h6> <span> ` +
+                    formatDate(sampleTags[i].invoiceDateLocalFormat) +
+                                    `<i class="fa fa-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>   `);
+
+                $("#orderModalClient .modal-content").append(
+                    `<div class="media">
+                            <a class="btn btn-order rounded-pill align-self-center  hvr-glow hvr-icon-push" target="_blank" href="`+ sampleTags[i].link + `">
+                                <i class="fa fa-print icon-order-button" aria-hidden="true">
+                                </i>` +
+                                '&#x627;&#x644;&#x62A;&#x641;&#x627;&#x635;&#x64A;&#x644;' +
+                            `</a>
+                            <div class="media-body">
+                                <h6 class="mt-0"><div dir="ltr" class="d-inline">`
+                    + sampleTags[i].net.formatMoney(sampleTags[i].net) + ' ' + sampleTags[i].currency +
+                                    `  </div><i class="fa fa-money" aria-hidden="true"></i>
+                                </h6> <span> ` +
+                    formatDate(sampleTags[i].invoiceDateLocalFormat) +
+                                    `<i class="fa fa-calendar" aria-hidden="true"></i>
+                                </span>
+                            </div>
+                        </div>   `);
+            }
+         }
+
+
+
+        });
+</script>
+    <!-- start Mixpanel -->
+    <script type="text/javascript">
+        (function (c, a) {
+            if (!a.__SV) {
+                var b = window; try { var d, m, j, k = b.location, f = k.hash; d = function (a, b) { return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null }; f && d(f, "state") && (j = JSON.parse(decodeURIComponent(d(f, "state"))), "mpeditor" === j.action && (b.sessionStorage.setItem("_mpcehash", f), history.replaceState(j.desiredHash || "", c.title, k.pathname + k.search))) } catch (n) { } var l, h; window.mixpanel = a; a._i = []; a.init = function (b, d, g) {
+                    function c(b, i) {
+                        var a = i.split("."); 2 == a.length && (b = b[a[0]], i = a[1]); b[i] = function () {
+                            b.push([i].concat(Array.prototype.slice.call(arguments,
+                                0)))
+                        }
+                    } var e = a; "undefined" !== typeof g ? e = a[g] = [] : g = "mixpanel"; e.people = e.people || []; e.toString = function (b) { var a = "mixpanel"; "mixpanel" !== g && (a += "." + g); b || (a += " (stub)"); return a }; e.people.toString = function () { return e.toString(1) + ".people (stub)" }; l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
+                    for (h = 0; h < l.length; h++)c(e, l[h]); var f = "set set_once union unset remove delete".split(" "); e.get_group = function () { function a(c) { b[c] = function () { call2_args = arguments; call2 = [c].concat(Array.prototype.slice.call(call2_args, 0)); e.push([d, call2]) } } for (var b = {}, d = ["get_group"].concat(Array.prototype.slice.call(arguments, 0)), c = 0; c < f.length; c++)a(f[c]); return b }; a._i.push([b, d, g])
+                }; a.__SV = 1.2; b = c.createElement("script"); b.type = "text/javascript"; b.async = !0; b.src = "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL ?
+                    MIXPANEL_CUSTOM_LIB_URL : "file:" === c.location.protocol && "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//) ? "https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js" : "//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"; d = c.getElementsByTagName("script")[0]; d.parentNode.insertBefore(b, d)
+            }
+        })(document, window.mixpanel || []);
+    mixpanel.init("be04f89143621cf81db4ed0e6cc6b201");</script>
+    <!-- end Mixpanel -->
+    <div id="TrackingScript">
+
+    </div>
+    <script>
+
+
+        $(function () {
+
+            $('footer .logo').fadeIn();
+
+            if (typeof TrackingScriptfooter !== 'undefined') {
+                $("#TrackingScript").html(TrackingScriptfooter);
+
+            }
+
+
+            if (typeof TrackingScript !== 'undefined') {
+
+                $('head').append(TrackingScript);
+
+            }
+
+            if (typeof StoreFooterHtmlScript !== 'undefined') {
+                $("#StoreFooterHtmlScript").html(StoreFooterHtmlScript);
+                feather.replace();
+            }
+
+        });
+    </script>
+
+
+
+    <script>
+        feather.replace();
+
+    </script>
+
+    
+
+    <script>
+
+        var accountLimit =20000;
+        var itemsCount =3;
+        var cartGlobalLengh = 0;
+        var tagsGlobal = tagsGlobal ?? '';
+        var totalPriceGlobal;
+        var lengthGlobal;
+        var idSeesion;
+    </script>
+    <script>
+
+        if (window.matchMedia("(min-width: 992px)").matches) {
+            window.onscroll = function () { myFunction() };
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop + 250;
+
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        }
+
+
+        function AddToCartProducInHome(id, price, bu, status, attributes) {
+
+            let isRequired = false;
+
+            if (attributes)
+                isRequired = attributes.some(element => {
+                if (element.req == 1) {
+                    return true;
+                }
+
+                return false;
+            });
+
+
+
+            if (status != 1) {
+                 if (bu)
+                $(bu).prop('disabled', true);
+            else
+                $(`.${id}-add-to-cart-new-in-card`).prop('disabled', true);
+
+            mixpanel.track(
+                "AddToCart_Product",
+                {}
+            );
+                if ("1" == 1) {
+
+                    if (isRequired) {
+                        toastr.warning("&#x64A;&#x62C;&#x628; &#x627;&#x62E;&#x62A;&#x64A;&#x627;&#x631; &#x627;&#x644;&#x62E;&#x635;&#x627;&#x626;&#x635; &#x627;&#x644;&#x627;&#x636;&#x627;&#x641;&#x64A;&#x629; &#x644;&#x644;&#x645;&#x646;&#x62A;&#x62C;");
+                    } else {
+                        price = roundUp(price, 2);
+
+                        val = 1;
+
+                        addToCartAnmation();
+
+                        let customAttributesObj = {};
+
+
+                        $.ajax({
+                            url: '/Me/AddToCart/' + id + '/' + val + '/' + false,
+
+                            method: 'POST',
+
+                            data: JSON.stringify(customAttributesObj),
+                            datatype: 'json',
+                            contentType: 'application/json; charset=UTF-8',
+                            success: function (res) {
+
+                                CheckItemNumberCart();
+
+
+
+                    },
+
+                            error: function (err) {
+                                console.log(err);
+                                if (bu)
+                                    $(bu).prop('disabled', true);
+                                else
+                                    $(`.${id}-add-to-cart-new-in-card`).prop('disabled', true);
+                            }
+                        });
+                    }
+
+
+
+                //}
+            }
+            }
+
+        }
+
+
+        function addToCartAnmation() {
+            if ($(window).width() <= 768) {
+                var cart = $('.test-anmi');
+
+
+            } else {
+                var cart = $('.desktop-number-item');
+
+            }
+            //var imgtodrag = $(img).parentsUntil('.item-search').find("img").eq(0);
+            var imgtodrag = $('.image-product');
+
+
+            if (imgtodrag.length) {
+                var imgclone = imgtodrag.clone()
+                    .offset({
+                        top: imgtodrag.offset().top,
+                        left: imgtodrag.offset().left
+                    })
+                    .css({
+                        'opacity': '0.5',
+                        'position': 'absolute',
+                        'height': '150px',
+                        'width': '150px',
+                        'z-index': '100'
+                    })
+                    .appendTo($('body'))
+                    .animate({
+                        'top': cart.offset().top + 10,
+                        'left': cart.offset().left + 10,
+                        'width': 75,
+                        'height': 75
+                    }, 1000, 'easeInOutExpo');
+
+                //setTimeout(function () {
+                //    cart.effect("shake", {
+                //        times: 2
+                //    }, 200);
+                //}, 1500);
+
+                imgclone.animate({
+                    'width': 0,
+                    'height': 0
+                }, function () {
+                    $(this).detach()
+                });
+            }
+        }
+
+    </script>
+
+</body>
+</html>
