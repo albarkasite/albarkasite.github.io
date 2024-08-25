@@ -1677,7 +1677,7 @@ async function callbackFunction(error="") {
     document.querySelector('.modalc-title').scrollIntoView({ behavior: 'smooth' });
     return
     }
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Replace 1000 with the desired sleep time in milliseconds
+    await new Promise(resolve => setTimeout(resolve, 2500)); // Replace 1000 with the desired sleep time in milliseconds
     console.log('Form submitted successfully!');
     
     document.querySelector('#confirmButton').removeAttribute("disabled");
