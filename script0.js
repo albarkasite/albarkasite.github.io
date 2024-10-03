@@ -206,6 +206,8 @@ async function apply(){
     
     let projectName=localStorage.getItem("currentProject")
     let para=localStorage.getItem(projectName)
+    console.log(para)
+    console.log(localStorage.getItem(projectName)['nextlink'])
     let nextlink=para['nextlink']
     let awaitedelement=para['awaitedelement']
     let selectors=para["selectors"]
