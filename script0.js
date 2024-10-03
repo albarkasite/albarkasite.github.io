@@ -204,7 +204,7 @@ return buf;
 
 async function apply(){
     
-    let projectName=document.querySelector('#projectName').value
+    let projectName=localStorage.getItem("currentProject")
     let para=localStorage.getItem(projectName)
     let nextlink=para['nextlink']
     let awaitedelement=para['awaitedelement']
