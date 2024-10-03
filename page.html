@@ -278,12 +278,12 @@ function s2ab(s) {
             if (typeof(ini)==Array && selectors==['clear']){saveData(projectName, []); return}
             if (selectors==[""]){selectors=["download"]}
             if (links==['']||projectName==""){return}
-            localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement})
             localStorage.setItem('currentProject',projectName)
             var ii=0
             for (let link of links){
                 ii++
                 nextlink=links[ii]
+                localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink})
                 currentlink=link+''
                 localStorage.setItem(projectName+'link', link);
                 document.querySelector('iframe').setAttribute('src',link)
