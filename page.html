@@ -279,6 +279,7 @@ function s2ab(s) {
             if (selectors==[""]){selectors=["download"]}
             if (links==['']||projectName==""){return}
             localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement})
+            localStorage.setItem('currentProject',projectName)
             var ii=0
             for (let link of links){
                 ii++
