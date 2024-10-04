@@ -296,6 +296,7 @@ var localStorageLink
     </script>
         <script>
 async function apply(){
+    console.log('run')
   var document=iframe.contentWindow.document
   let para=localStorageDict
   let projectName=para['projectName']
@@ -304,6 +305,7 @@ async function apply(){
   let selectors=para["selectors"]
   if (selectors==["download"]){downloadAsXlsx(projectName)}
   while(document.querySelector(awaitedelement)==null){console.log(awaitedelement); await new Promise((resolve) => setTimeout(resolve,500));}
+  console.log('collecting')
   await collectData(projectName, selectors,document)
   localStorageLink=nextlink+''
   console.log(localStorageLink,nextlink)
