@@ -271,6 +271,7 @@ function s2ab(s) {
 var localStorageDict
 var localStorageLink
 var currentLink
+var iframe = document.getElementById('myIframe');
         document.querySelector('#start').addEventListener('click', async function (event) {
             projectName=document.querySelector('#projectName').value
             links=document.querySelector('#links').value.split('\n')
@@ -325,7 +326,7 @@ async function apply(){
   if (!nextlink){downloadAsXlsx(projectName)}
 }
 
-            const iframe = document.getElementById('myIframe');
+            
             iframe.onload = function() {
                 apply()
             };
