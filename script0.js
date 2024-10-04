@@ -203,18 +203,17 @@ return buf;
 }
 
 async function apply(){
-    
-    let projectName=localStorage.getItem("currentProject")
-    let para=localStorage.getItem(projectName)
+  
+    let para=window.parent.localStorageDict
     console.log(para)
-    console.log(localStorage.getItem(projectName)['nextlink'])
+    let projectName=para['projectName']
     let nextlink=para['nextlink']
     let awaitedelement=para['awaitedelement']
     let selectors=para["selectors"]
     if (selectors==["download"]){downloadAsXlsx(projectName)}
     while(document.querySelector(awaitedelement)==null){console.log(awaitedelement); await new Promise((resolve) => setTimeout(resolve,500));}
     await collectData(projectName, selectors)
-    localStorage.setItem(projectName+'link',nextlink)
+    window.parent.localStorageLink=nextlink+''
     if (!nextlink){downloadAsXlsx(projectName)}
 }
 apply()
