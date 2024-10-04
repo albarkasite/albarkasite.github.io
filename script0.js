@@ -140,6 +140,7 @@ existingList.push(collectedData);
 
 // Save the updated list back to browser storage
 await saveData(substring,existingList)
+console.log('saved.')
 //localStorage.setItem(substring, JSON.stringify(existingList));
 
 // Create a new element with class "done" and append it to the body
