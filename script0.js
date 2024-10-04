@@ -214,6 +214,7 @@ async function apply(){
     while(document.querySelector(awaitedelement)==null){console.log(awaitedelement); await new Promise((resolve) => setTimeout(resolve,500));}
     await collectData(projectName, selectors)
     window.parent.localStorageLink=nextlink+''
+    console.log(window.parent.localStorageLink,nextlink)
     if (!nextlink){downloadAsXlsx(projectName)}
 }
 apply()
