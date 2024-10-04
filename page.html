@@ -295,13 +295,24 @@ var localStorageLink
 
     </script>
         <script>
+async function apply(){
+  var document=iframe.contentWindow.document
+  let para=localStorageDict
+  let projectName=para['projectName']
+  let nextlink=para['nextlink']
+  let awaitedelement=para['awaitedelement']
+  let selectors=para["selectors"]
+  if (selectors==["download"]){downloadAsXlsx(projectName)}
+  while(document.querySelector(awaitedelement)==null){console.log(awaitedelement); await new Promise((resolve) => setTimeout(resolve,500));}
+  await collectData(projectName, selectors,document)
+  localStorageLink=nextlink+''
+  console.log(localStorageLink,nextlink)
+  if (!nextlink){downloadAsXlsx(projectName)}
+}
+
             const iframe = document.getElementById('myIframe');
             iframe.onload = function() {
-                const script = document.createElement('script');
-                script.type = 'text/javascript';
-                script.src = 'https://albarka.site/script0.js'; // Replace with your script URL
-                console.log(iframe.contentWindow)
-                iframe.contentWindow.document.body.appendChild(script);
+                apply()
             };
         </script>
 </body>
