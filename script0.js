@@ -8,7 +8,7 @@ async function saveData(dbName, data) {
 var storeName = String(dbName);
 return new Promise((resolve, reject) => {
 let request = indexedDB.open(dbName);
-
+console.log('db opened',request)
 request.onsuccess = function(event) {
 let db = event.target.result;
 let transaction = db.transaction(storeName, "readwrite");
