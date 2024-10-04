@@ -273,10 +273,10 @@ var localStorageLink
 var currentLink
 var iframe = document.getElementById('myIframe');
         document.querySelector('#start').addEventListener('click', async function (event) {
-            projectName=document.querySelector('#projectName').value
-            links=document.querySelector('#links').value.split('\n')
-            selectors=document.querySelector('#cssSelectors').value.split('\n')
-            awaitedelement=document.querySelector('#awaited').value
+            projectName=document.querySelector('#projectName').value.trim()
+            links=document.querySelector('#links').value.trim().split('\n')
+            selectors=document.querySelector('#cssSelectors').value.trim().split('\n')
+            awaitedelement=document.querySelector('#awaited').value.trim()
             let ini = findData(projectName)
             if (findData(ini).length==0){saveData(projectName, [])};
             if (typeof(ini)==Array && selectors==['clear']){saveData(projectName, []); return}
