@@ -80,7 +80,7 @@ async function saveData(dbName, data) {
       let db = event.target.result;
       let transaction = db.transaction(storeName, "readwrite");
       let store = transaction.objectStore(storeName, { keyPath: "id", autoIncrement: true });
-      store.clear()
+      
 
       data.forEach(item => {
         let obj = {};
