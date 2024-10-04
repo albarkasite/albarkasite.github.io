@@ -308,7 +308,7 @@ async function apply(){
   let awaitedelement=para['awaitedelement']
   let selectors=para["selectors"]
   if (selectors==["download"]){downloadAsXlsx(projectName)}
-  iv=0
+  var iv=0
   while (document.querySelector(awaitedelement) == null) {
   console.log(awaitedelement);
   await new Promise((resolve) => setTimeout(resolve, 500));
