@@ -270,6 +270,7 @@ function s2ab(s) {
 }
 var localStorageDict
 var localStorageLink
+var currentLink
         document.querySelector('#start').addEventListener('click', async function (event) {
             projectName=document.querySelector('#projectName').value
             links=document.querySelector('#links').value.split('\n')
@@ -282,6 +283,7 @@ var localStorageLink
             if (links==['']||projectName==""){return}
             var ii=0
             for (let link of links){
+                currentlink=link+""
                 ii++
                 nextlink=links[ii]
                 //localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink})
