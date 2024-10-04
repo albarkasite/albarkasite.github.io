@@ -292,6 +292,13 @@ var iframe = document.getElementById('myIframe');
                 localStorageLink=link+''
                 //localStorage.setItem(projectName+'link', link);
                 document.querySelector('iframe').setAttribute('src',link)
+                        // Wait for the iframe to load and process data
+        await new Promise((resolve) => {
+            iframe.onload = async function () {
+                await apply();
+                resolve();
+            };
+        });
                 while (localStorageLink+''==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
 
         }})
@@ -321,14 +328,13 @@ async function apply(){
 }
   console.log('collecting')
   await collectData(projectName,selectors,document,window)
+
   localStorageLink=nextlink+''
   console.log(localStorageLink,nextlink)
   if (!nextlink){downloadAsXlsx(projectName)}
 }
             
-            iframe.onload = function() {
-                apply()
-            };
+
         </script>
 </body>
 </html>
