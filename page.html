@@ -80,7 +80,7 @@ async function saveData(dbName, data) {
       let db = event.target.result;
       let transaction = db.transaction(storeName, "readwrite");
       let store = transaction.objectStore(storeName, { keyPath: "id", autoIncrement: true });
-      
+      store.clear()
 
       data.forEach(item => {
         let obj = {};
@@ -197,7 +197,7 @@ async function collectData(substring, cssSelectors,document,window) {
   // Retrieve the existing list from browser storage or create a new one if it doesn't exist
   let existingList=[]
   await findData(substring).then(value => {
-     existingList = fixli(value,selectors.length)
+     existingList = fixli(value,selectors.length+1)
   }) 
   console.log(existingList)
   //let existingList = JSON.parse(localStorage.getItem(substring)) || [];
@@ -226,7 +226,7 @@ async function downloadAsXlsx(substring) {
         let data = []
 
   await findData(substring).then(value => {
-     data = fixli(value,14)
+     data = fixli(value,100)
 console.log(data)
   }) 
     loadXlsxLibrary(() => {
