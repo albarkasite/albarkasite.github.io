@@ -164,7 +164,7 @@ function extr(parentId) {
 
   return textWithLineBreaks;
 }
-async function collectData(substring, cssSelectors) {
+async function collectData(substring, cssSelectors,document) {
   // Initialize an empty list to store the collected data
   let collectedData = [window.location.href];
 
