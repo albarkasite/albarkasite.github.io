@@ -164,7 +164,7 @@ function extr(parentId) {
 
   return textWithLineBreaks;
 }
-async function collectData(substring, cssSelectors,document) {
+async function collectData(substring, cssSelectors,document,window) {
   // Initialize an empty list to store the collected data
   let collectedData = [window.location.href];
 
@@ -297,6 +297,7 @@ var localStorageLink
         <script>
 async function apply(){
     console.log('run')
+  var window=iframe.contentWindow.window
   var document=iframe.contentWindow.document
   let para=localStorageDict
   let projectName=para['projectName']
@@ -304,9 +305,10 @@ async function apply(){
   let awaitedelement=para['awaitedelement']
   let selectors=para["selectors"]
   if (selectors==["download"]){downloadAsXlsx(projectName)}
+  i==
   while(document.querySelector(awaitedelement)==null){console.log(awaitedelement); await new Promise((resolve) => setTimeout(resolve,500));}
   console.log('collecting')
-  await collectData(projectName, selectors,document)
+  await collectData(projectName,selectors,document,window)
   localStorageLink=nextlink+''
   console.log(localStorageLink,nextlink)
   if (!nextlink){downloadAsXlsx(projectName)}
