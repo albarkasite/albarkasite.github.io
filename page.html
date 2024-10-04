@@ -316,7 +316,7 @@ async function apply(){
   iv++;
   if (iv > 50) {
     iv = 0;
-    await window.location.href = currentlink;
+     window.location.href = currentlink;
   }
 }
   console.log('collecting')
@@ -325,7 +325,6 @@ async function apply(){
   console.log(localStorageLink,nextlink)
   if (!nextlink){downloadAsXlsx(projectName)}
 }
-
             
             iframe.onload = function() {
                 apply()
