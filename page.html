@@ -308,7 +308,16 @@ async function apply(){
   let selectors=para["selectors"]
   if (selectors==["download"]){downloadAsXlsx(projectName)}
   iv=0
-  while(document.querySelector(awaitedelement)==null){console.log(awaitedelement); await new Promise((resolve) => setTimeout(resolve,500));iv++;if(iv>50){iv=0;await window.location.href=currentlink}}
+  while (document.querySelector(awaitedelement) == null) {
+  console.log(awaitedelement);
+  await new Promise((resolve) => setTimeout(resolve, 500));
+
+  iv++;
+  if (iv > 50) {
+    iv = 0;
+    await window.location.href = currentlink;
+  }
+}
   console.log('collecting')
   await collectData(projectName,selectors,document,window)
   localStorageLink=nextlink+''
