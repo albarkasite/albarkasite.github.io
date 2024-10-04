@@ -268,6 +268,8 @@ function s2ab(s) {
     }
     return buf;
 }
+var localStorageDict
+var localStorageLink
         document.querySelector('#start').addEventListener('click', async function (event) {
             projectName=document.querySelector('#projectName').value
             links=document.querySelector('#links').value.split('\n')
@@ -278,19 +280,17 @@ function s2ab(s) {
             if (typeof(ini)==Array && selectors==['clear']){saveData(projectName, []); return}
             if (selectors==[""]){selectors=["download"]}
             if (links==['']||projectName==""){return}
-            localStorage.setItem('currentProject',projectName)
             var ii=0
             for (let link of links){
                 ii++
                 nextlink=links[ii]
-                localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink})
-                currentlink=link+''
-                localStorage.setItem(projectName+'link', link);
+                //localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink})
+                localStorageDict={'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink}
+                localStorageLink=link+''
+                //localStorage.setItem(projectName+'link', link);
                 document.querySelector('iframe').setAttribute('src',link)
-                while (localStorage.getItem(projectName+'link')==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
-                
-            
-            
+                while (localStorageLink+''==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
+
         }})
 
     </script>
