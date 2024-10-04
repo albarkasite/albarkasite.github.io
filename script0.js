@@ -130,7 +130,7 @@ collectedData.push(data);
 // Retrieve the existing list from browser storage or create a new one if it doesn't exist
 let existingList=[]
 await findData(substring).then(value => {
-existingList = fixli(value,selectors.length)
+existingList = fixli(value,window.parent.localStorageDict["selectors"].length)
 }) 
 console.log(existingList)
 //let existingList = JSON.parse(localStorage.getItem(substring)) || [];
