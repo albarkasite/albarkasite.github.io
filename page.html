@@ -54,60 +54,7 @@
         <p></p>
     </div>
     <div class="popup-container">
-        <div class="section iframe-container"><iframe is="x-frame-bypass" id="myIframe" src="" srcdoc="<!DOCTYPE html>
-<html>
-<head>
-	<base href=&quot;https://niutech.github.io/x-frame-bypass/&quot;>
-	<script>
-	// X-Frame-Bypass navigation event handlers
-	document.addEventListener('click', e => {
-		if (frameElement &amp;&amp; document.activeElement &amp;&amp; document.activeElement.href) {
-			e.preventDefault()
-			frameElement.load(document.activeElement.href)
-		}
-	})
-	document.addEventListener('submit', e => {
-		if (frameElement &amp;&amp; document.activeElement &amp;&amp; document.activeElement.form &amp;&amp; document.activeElement.form.action) {
-			e.preventDefault()
-			if (document.activeElement.form.method === 'post')
-				frameElement.load(document.activeElement.form.action, {method: 'post', body: new FormData(document.activeElement.form)})
-			else
-				frameElement.load(document.activeElement.form.action + '?' + new URLSearchParams(new FormData(document.activeElement.form)))
-		}
-	})
-	</script>
-	<meta charset=&quot;UTF-8&quot;>
-	<meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;>
-	<meta name=&quot;description&quot; content=&quot;X-Frame-Bypass: Web Component extending IFrame to bypass X-Frame-Options: deny/sameorigin&quot;>
-	<title>X-Frame-Bypass Web Component Demo</title>
-	<style>
-		html, body {
-			margin: 0;
-			padding: 0;
-			height: 100%;
-			overflow: hidden;
-		}
-		iframe {
-			display: block;
-			width: calc(100% - 40px);
-			height: calc(100% - 40px);
-			margin: 20px;
-		}
-		img {
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
-	</style>
-	<script src=&quot;https://unpkg.com/@ungap/custom-elements-builtin&quot;></script>
-	<script src=&quot;x-frame-bypass.js&quot; type=&quot;module&quot;></script>
-</head>
-<body>
-	<iframe is=&quot;x-frame-bypass&quot; src=&quot;https://news.ycombinator.com/&quot;></iframe>
-	<a href=&quot;https://github.com/niutech/x-frame-bypass&quot;><img src=&quot;https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png&quot; alt=&quot;Fork me on GitHub&quot;></a>
-</body>
-</html>
-" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe></div></div>
+        <div class="section iframe-container"><iframe is="x-frame-bypass" id="myIframe" src="" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe></div></div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -389,6 +336,6 @@ async function apply(){
             
 
         </script>
-     <script type="module" src="https://unpkg.com/x-frame-bypass"></script>
+     
 </body>
 </html>
