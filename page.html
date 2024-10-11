@@ -152,6 +152,69 @@ function removeAllStyleTags(element) {
     const styleTags = element.querySelectorAll('style');
     styleTags.forEach(styleTag => styleTag.remove());
 }
+
+function querySelectorAll(document,selector) {
+    const hasPattern = /:has\(([^)]+)\)/;
+    const match = selector.match(hasPattern);
+
+    if (!match) {
+        return document.querySelectorAll(selector);
+    }
+
+    const mainSelector = selector.split(':has(')[0];
+    const hasSelector = match[1].trim();
+    const isDirectChild = hasSelector.startsWith('>');
+    const elements = document.querySelectorAll(mainSelector);
+
+    const filteredElements = Array.from(elements).filter(element => {
+        if (isDirectChild) {
+            const childSelector = hasSelector.slice(1).trim();
+            return Array.from(element.children).some(child => child.matches(childSelector));
+        } else {
+            return element.querySelector(hasSelector) !== null;
+        }
+    });
+
+    return filteredElements;
+}
+
+function querySelector(document,selector) {
+    // Check if the selector contains :has()
+    const hasPattern = /:has\(([^)]+)\)/;
+    const match = selector.match(hasPattern);
+
+    if (!match) {
+        // If :has() is not found, use the standard querySelector
+        return document.querySelector(selector);
+    }
+
+    // Extract the main selector and the :has() part
+    const mainSelector = selector.split(':has(')[0];
+    const hasSelector = match[1].trim();
+
+    // Determine if the :has() selector is for direct children or any descendants
+    const isDirectChild = hasSelector.startsWith('>');
+
+    // Get all elements matching the main selector
+    const elements = document.querySelectorAll(mainSelector);
+
+    // Filter elements based on the :has() selector
+    const filteredElements = Array.from(elements).filter(element => {
+        if (isDirectChild) {
+            // Remove the '>' and trim the selector
+            const childSelector = hasSelector.slice(1).trim();
+            return Array.from(element.children).some(child => child.matches(childSelector));
+        } else {
+            return element.querySelector(hasSelector) !== null;
+        }
+    });
+
+    // Return the first matching element or null if none found
+    return filteredElements.length > 0 ? filteredElements[0] : null;
+}
+
+
+
 function extr(parentId) {
   var parent = parentId;
   removeAllStyleTags(parentId)
@@ -178,19 +241,19 @@ async function collectData(substring, cssSelectors,document,window) {
 
       // Check if the selector starts with 'link:', 'src:', or 'html:'
       if (selector.startsWith('link:')) {
-          let element = document.querySelector(selector.replace('link:', ''));
+          let element = querySelector(document,selector.replace('link:', ''));
           data = element ? element.href : '';
       } else if (selector.startsWith('src:')) {
-          let element = document.querySelector(selector.replace('src:', ''));
+          let element = querySelector(document,selector.replace('src:', ''));
           data = element ? element.src : '';
         } else if (selector.startsWith('html:')) {
-          let element = document.querySelector(selector.replace('html:', ''));
+          let element = querySelector(document,selector.replace('html:', ''));
           data = element ? element.innerHTML : '';
       }else if (selector.startsWith('barcode:')) {
-        let element = document.querySelector(selector.replace('barcode:', ''));
+        let element = querySelector(document,selector.replace('barcode:', ''));
         data = element ? findBarcode(extr(element)) : '';
     } else {
-          let element = document.querySelector(selector);
+          let element = querySelector(document,selector);
           data = element ? extr(element) : '';
       }
 
