@@ -393,6 +393,7 @@ async function apply(){
   await new Promise((resolve) => setTimeout(resolve, 500));
 
   iv++;
+  if (stop){return}
   if (iv > 50) {
     iv = 0;
      window.location.href = currentlink;
@@ -403,7 +404,7 @@ async function apply(){
 
   localStorageLink=nextlink+''
   console.log(localStorageLink,nextlink)
-  if (!nextlink){downloadAsXlsx(projectName)}
+  if (!nextlink){stop=false;document.querySelector('#start').textContent="Start";downloadAsXlsx(projectName)}
 }
             
 
