@@ -271,8 +271,12 @@ function s2ab(s) {
 var localStorageDict
 var localStorageLink
 var currentLink
+var stop=false
 var iframe = document.getElementById('myIframe');
         document.querySelector('#start').addEventListener('click', async function (event) {
+            if (stop){return}
+            if (document.querySelector('#start').textContent=="Stop"){stop=true; document.querySelector('#start').textContent="Start"; return}
+            document.querySelector('#start').textContent='Stop'
             projectName=document.querySelector('#projectName').value.trim()
             links=document.querySelector('#links').value.trim().split('\n')
             selectors=document.querySelector('#cssSelectors').value.trim().split('\n')
@@ -284,6 +288,7 @@ var iframe = document.getElementById('myIframe');
             if (links==['']||projectName==""){return}
             var ii=0
             for (let link of links){
+                if (stop){stop=false;downloadAsXlsx(projectName);return}
                 currentlink=link+""
                 ii++
                 nextlink=links[ii]
