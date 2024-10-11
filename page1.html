@@ -377,6 +377,7 @@ var iframe = document.getElementById('myIframe');
 
     </script>
         <script>
+var documentx=document
 async function apply(){
     console.log('run')
   var window=iframe.contentWindow.window
@@ -404,7 +405,7 @@ async function apply(){
 
   localStorageLink=nextlink+''
   console.log(localStorageLink,nextlink)
-  if (!nextlink){stop=false;document.querySelector('#start').textContent="Start";downloadAsXlsx(projectName)}
+  if (!nextlink){stop=false;documentx.querySelector('#start').textContent="Start";downloadAsXlsx(projectName)}
 }
             
 
