@@ -148,9 +148,13 @@ async function findData(dbName) {
 }
 
 
-
+function removeAllStyleTags(element) {
+    const styleTags = element.querySelectorAll('style');
+    styleTags.forEach(styleTag => styleTag.remove());
+}
 function extr(parentId) {
   var parent = parentId;
+  removeAllStyleTags(parentId)
   let htmlContent = parent.innerHTML;
 
   // Replace block-level tags with newline characters
