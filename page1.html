@@ -378,6 +378,34 @@ var iframe = document.getElementById('myIframe');
     </script>
         <script>
 var documentx=document
+function extractDomain(url) {
+    try {
+        // Create a new URL object
+        const urlObj = new URL(url);
+        // Return the hostname (domain) part of the URL
+        return urlObj.hostname;
+    } catch (error) {
+        console.error("Invalid URL:", error);
+        return null;
+    }
+}
+function deleteCookiesForSite(link) {
+    var domain = extractDomain(link)
+    // Get all cookies for the current domain
+    const cookies = document.cookie.split(";");
+
+    // Loop through each cookie
+    cookies.forEach(cookie => {
+        // Get the cookie name
+        const cookieName = cookie.split("=")[0].trim();
+
+        // Delete the cookie by setting its expiration date to a past date
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
+    });
+localStorage.clear();
+sessionStorage.clear();
+
+}
 async function apply(){
     console.log('run')
   var window=iframe.contentWindow.window
@@ -392,7 +420,7 @@ async function apply(){
   while (document.querySelector(awaitedelement) == null) {
   console.log(awaitedelement);
   await new Promise((resolve) => setTimeout(resolve, 500));
-
+  deleteCookiesForSite(window.location.href)
   iv++;
   if (stop){return}
   if (iv > 50) {
