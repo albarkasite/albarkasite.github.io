@@ -418,6 +418,7 @@ async function apply(){
   if (selectors==["download"]){downloadAsXlsx(projectName)}
   var iv=0
   deleteCookiesForSite(window.location.href)
+  deleteCookiesForSite(window.location.href.replace('https://www.','https://').replace('http://www.','http://'))
   while (document.querySelector(awaitedelement) == null) {
   console.log(awaitedelement);
   await new Promise((resolve) => setTimeout(resolve, 500));
