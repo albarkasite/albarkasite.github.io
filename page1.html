@@ -266,7 +266,7 @@ async function collectData(substring, cssSelectors,document,window) {
   await findData(substring).then(value => {
      existingList = fixli(value,selectors.length+1)
   }) 
-  console.log(existingList)
+  
   //let existingList = JSON.parse(localStorage.getItem(substring)) || [];
 
   // Add the collected data to the existing list
@@ -307,7 +307,7 @@ console.log(data)
 
         // Create a new workbook and add the data to a worksheet
         let workbook = XLSX.utils.book_new();
-        console.log(data)
+
         let worksheet = XLSX.utils.aoa_to_sheet(data);
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
 
@@ -417,10 +417,10 @@ async function apply(){
   let selectors=para["selectors"]
   if (selectors==["download"]){downloadAsXlsx(projectName)}
   var iv=0
+  deleteCookiesForSite(window.location.href)
   while (document.querySelector(awaitedelement) == null) {
   console.log(awaitedelement);
   await new Promise((resolve) => setTimeout(resolve, 500));
-  deleteCookiesForSite(window.location.href)
   iv++;
   if (stop){return}
   if (iv > 50) {
