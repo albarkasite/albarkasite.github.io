@@ -284,9 +284,6 @@ console.log('collected')
 }
 function loadXlsxLibrary(callback) {
     let script = document.createElement('script');
-    script.src = 'https://raw.githubusercontent.com/albarkasite/albarkasite.github.io/main/xlsx.full.min.js';
-    script.onload = callback;
-    document.head.appendChild(script);
 }
 
 async function downloadAsXlsx(substring) {
@@ -439,6 +436,7 @@ async function apply(){
             
 
         </script>
+    <script src="https://raw.githubusercontent.com/albarkasite/albarkasite.github.io/main/xlsx.full.min.js"></script>
      
 </body>
 </html>
