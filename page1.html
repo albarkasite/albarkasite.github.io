@@ -283,28 +283,33 @@ async function collectData(substring, cssSelectors,document,window) {
 console.log('collected')
 }
 function loadXlsxLibrary(callback) {
-    let script = document.createElement('script');
+    if (typeof XLSX !== 'undefined') {
+        // XLSX is already loaded, proceed with the callback
+        callback();
+    } else {
+        // Load XLSX library
+        let script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js';
+        script.onload = callback;
+        document.head.appendChild(script);
+    }
 }
 
 async function downloadAsXlsx(substring) {
-        let data = []
-
-  await findData(substring).then(value => {
-     data = fixli(value,100)
-console.log(data)
-  }) 
+    let data = [];
+    await findData(substring).then(value => {
+        data = fixli(value, 100);
+        console.log(data);
+    });
+    
     loadXlsxLibrary(() => {
-        // Retrieve the list of lists from localStorage
-        //let data = JSON.parse(localStorage.getItem(substring));
-
-        if (!data) {
+        if (!data || !data.length) {
             console.error('No data found for the given substring.');
             return;
         }
 
         // Create a new workbook and add the data to a worksheet
         let workbook = XLSX.utils.book_new();
-
         let worksheet = XLSX.utils.aoa_to_sheet(data);
         XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
 
@@ -323,6 +328,7 @@ console.log(data)
         document.body.removeChild(link);
     });
 }
+
 
 function s2ab(s) {
     let buf = new ArrayBuffer(s.length);
