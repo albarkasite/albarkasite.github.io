@@ -32,6 +32,28 @@
 <body> 
 
     <div class="popup-container">
+      <style>
+        .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.btn-start {
+    background-color: rgb(66, 154, 66);
+    color: white;
+    margin: 0 10px; /* Adjust margin as needed */
+}
+
+.btn-resume {
+    background-color: rgb(219, 161, 55);
+    color: white;
+    margin: 0 10px; /* Adjust margin as needed */
+}
+
+
+      </style>
         <div class="section">
             <div class="form-group">
                 <label for="projectName">Project Name</label>
@@ -49,9 +71,10 @@
                 <label for="links">Links</label>
                 <textarea class="form-control" id="links" rows="3" placeholder="Enter links"></textarea>
             </div>
-            <button type="button" class="btn btn-primary" id="start">Start</button>
-            <button type="button" class="btn btn-primary" id="resume" onclick="resume()">resume</button>
-            <button type="button" class="btn btn-primary" id="download" onclick="downloadAsXlsx(document.querySelector('#projectName').value)">Download</button>
+            <div class="btn-container">
+            <button type="button" class="btn btn-start" id="start">Start</button>
+            <button type="button" class="btn btn-resume" id="resume" onclick="resume()">Resume</button>
+            <button type="button" class="btn btn-primary" id="download" onclick="downloadAsXlsx(document.querySelector('#projectName').value)">Download</button></div>
         </div>
         <p></p>
     </div>
@@ -67,7 +90,7 @@
         var awaitedelement
         var projectName
         var nextlink
-        var workedon
+        var workedon = []
         // Set a value in localStorage
         function fixli(lists, maxLength) {
   return lists.map(sublist => {
