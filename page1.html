@@ -50,6 +50,7 @@
                 <textarea class="form-control" id="links" rows="3" placeholder="Enter links"></textarea>
             </div>
             <button type="button" class="btn btn-primary" id="start">Start</button>
+            <button type="button" class="btn btn-primary" id="resume" onclick="resume()">resume</button>
             <button type="button" class="btn btn-primary" id="download" onclick="downloadAsXlsx(document.querySelector('#projectName').value)">Download</button>
         </div>
         <p></p>
@@ -66,6 +67,7 @@
         var awaitedelement
         var projectName
         var nextlink
+        var workedon
         // Set a value in localStorage
         function fixli(lists, maxLength) {
   return lists.map(sublist => {
@@ -376,11 +378,50 @@ var iframe = document.getElementById('myIframe');
             };
         });
                 while (localStorageLink+''==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
+                workedon.push(link)
 
         }})
 
     </script>
         <script>
+async function resume(){
+  if (document.querySelector('#start').textContent=="Stop"){return}
+  if (stop){stop=false; document.querySelector('#start').textContent="Start";return}
+            if (document.querySelector('#start').textContent=="Stop"){stop=true; document.querySelector('#start').textContent="Start"; return}
+            document.querySelector('#start').textContent='Stop'
+            projectName=document.querySelector('#projectName').value.trim()
+            links=document.querySelector('#links').value.trim().split('\n')
+            selectors=document.querySelector('#cssSelectors').value.trim().split('\n')
+            awaitedelement=document.querySelector('#awaited').value.trim()
+            let ini = findData(projectName)
+            if (findData(ini).length==0){saveData(projectName, [])};
+            if (typeof(ini)==Array && selectors==['clear']){saveData(projectName, []); return}
+            if (selectors==[""]){selectors=["download"]}
+            if (links==['']||projectName==""){return}
+            var ii=0
+            for (let link of links){
+                if (link in workedon){continue}
+                if (stop){stop=false;document.querySelector('#start').textContent="Start";downloadAsXlsx(projectName);return}
+                currentlink=link+""
+                ii++
+                nextlink=links[ii]
+                //localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink})
+                localStorageDict={'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink}
+                localStorageLink=link+''
+                //localStorage.setItem(projectName+'link', link);
+                document.querySelector('iframe').setAttribute('src',link)
+                        // Wait for the iframe to load and process data
+        await new Promise((resolve) => {
+            iframe.onload = async function () {
+                await apply();
+                resolve();
+            };
+        });
+                while (localStorageLink+''==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
+                workedon.push(link)
+
+        }
+}
 var documentx=document
 function extractDomain(url) {
     try {
