@@ -374,7 +374,7 @@ var iframe = document.getElementById('myIframe');
             if (document.querySelector('#start').textContent=="Stop"){stop=true; document.querySelector('#start').textContent="Start"; return}
             document.querySelector('#start').textContent='Stop'
             projectName=document.querySelector('#projectName').value.trim()
-            links=document.querySelector('#links').value.trim().split('\n')
+            links=Array.from(new Set(document.querySelector('#links').value.trim().split('\n')))
             selectors=document.querySelector('#cssSelectors').value.trim().split('\n')
             awaitedelement=document.querySelector('#awaited').value.trim()
             let ini = findData(projectName)
