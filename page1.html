@@ -494,7 +494,7 @@ async function apply(){
   if (stop){return}
   if (iv > 50) {
     iv = 0;
-     window.location.href = currentlink;
+     window.location.href = (currentlink+'?').replace('?',"?"+String(iv)+"&");
   }
 }
   console.log('collecting')
