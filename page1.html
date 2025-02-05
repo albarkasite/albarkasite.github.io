@@ -241,7 +241,7 @@ function querySelector(document,selector) {
 
 
 
-function extr(parentId) {
+function extrx(parentId) {
   var parent = parentId;
   removeAllStyleTags(parentId)
   let htmlContent = parent.innerHTML;
@@ -475,8 +475,43 @@ localStorage.clear();
 sessionStorage.clear();
 
 }
+function decodeHTMLEntities(text) {
+      const textarea = document.createElement('textarea');
+      textarea.innerHTML = text;
+      return textarea.value;
+    }
+function extr(parentId) {
+    var parent = parentId;
+    removeAllStyleTags(parentId);
+    let htmlContent = parent.innerHTML;
+    htmlContent = decodeHTMLEntities(text)
+    // Replace block-level tags with newline characters
+    htmlContent = htmlContent.replace(/<\/?(div|p|br|li|h[1-6])[^>]*>/gi, '\n');
+
+    // Remove all other HTML tags
+    htmlContent = htmlContent.replace(/<\/?[^>]+(>|$)/g, '');
+
+    // Replace multiple consecutive newlines with a single newline
+    htmlContent = htmlContent.replace(/\n+/g, '\n').trim();
+
+    // Decode all HTML entities using he library
+    
+
+    // Return the final string
+    return htmlContent;
+  }
 async function apply(){
-    console.log('run')
+    function injectCSS() {
+      const style = document.createElement('style');
+      style.innerHTML = `
+        li::marker {
+          content: '•'; /* Replace this with your desired symbol */
+          color: black; /* You can set the color */
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
   var window=iframe.contentWindow.window
   var document=iframe.contentWindow.document
   let para=localStorageDict
@@ -498,7 +533,8 @@ async function apply(){
      window.location.href = (currentlink+'?').replace('?',"?"+String(iv)+"&");
   }
 }
-  console.log('collecting')
+injectCSS();
+await new Promise((resolve) => setTimeout(resolve, 200));
   await collectData(projectName,selectors,document,window)
 
   localStorageLink=nextlink+''
