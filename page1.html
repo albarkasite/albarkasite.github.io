@@ -272,6 +272,9 @@ async function collectData(substring, cssSelectors,document,window) {
       } else if (selector.startsWith('src:')) {
           let element = querySelector(document,selector.replace('src:', ''));
           data = element ? element.src : '';
+        } else if (selector.startsWith('meta')) {
+          let element = querySelector(document,selector);
+          data = element ? element.getAttribute('content') : '';
         } else if (selector.startsWith('html:')) {
           let element = querySelector(document,selector.replace('html:', ''));
           data = element ? element.innerHTML : '';
