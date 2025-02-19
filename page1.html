@@ -387,6 +387,8 @@ var iframe = document.getElementById('myIframe');
             if (links==['']||projectName==""){return}
             var ii=0
             for (let link of links){
+                //TO REMOVE
+                await new Promise((resolve) => setTimeout(resolve,1500));
                 if (stop){stop=false;document.querySelector('#start').textContent="Start";downloadAsXlsx(projectName);return}
                 currentlink=link+""
                 ii++
@@ -396,6 +398,7 @@ var iframe = document.getElementById('myIframe');
                 localStorageDict={'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink}
                 localStorageLink=link+''
                 //localStorage.setItem(projectName+'link', link);
+                
                 document.querySelector('iframe').setAttribute('src',link)
                         // Wait for the iframe to load and process data
         await new Promise((resolve) => {
