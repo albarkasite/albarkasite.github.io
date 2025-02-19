@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Bulk Email Links Generator</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="Barmga, Personal Development, Business Development, Educational Content, Tools, Resources, Learning">
+
+    <meta name="description" content="This free tool helps you send bulk email messages only with button clicks! Transform all email addresses to bulk email links with message and subject attached. Send every message with two button clicks! ">
+    <meta property="og:title" content="Barmga | Bulk Email Links Generator" />
+    <meta property="og:description" content="This free tool helps you send bulk email messages only with button clicks! Transform all email addresses to bulk email links with message and subject attached. Send every message with two button clicks! " />
+    <meta property="og:image" content="images/barmga.png" />
+    <meta property="og:url" content="https://barmga.com/bulk-email-links" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <!-- Favicon -->
+
+
+    <link rel="icon" type="image/x-icon" href="images/logo.png" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+     
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+<style>
+    body{font-family: 'Gabriela', serif !important;}
+    .tool > *,.lab {
+    margin-top: 10px; /* Adjust the value as needed */
+    margin-bottom: 10px; /* Adjust the value as needed */
+}
+#fixed_button {
+  position: fixed;
+  bottom: 65px; /* Space from the bottom */
+  right: 35px; /* Space from the right */
+  width: 45px; /* Slightly larger for a modern look */
+  height: 45px; /* Slightly larger for a modern look */
+  border-radius: 50%; /* Rounded button */
+  color: white;
+  border: none;
+  cursor: pointer;
+  z-index: 100000; /* Ensure it stays above other content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Modern shadow effect */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+#fixed_button:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.btn-custom {
+            max-width: 250px; /* Adjust the width as needed */
+            min-width: 150px; /* Adjust the width as needed */
+        }
+
+            .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        .btn-secondary {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+        }
+    
+           
+
+.container{
+  width: 100%;
+}
+[onclick] {
+    cursor: pointer;
+}
+:target {
+  padding-top: 70px; /* height of your navbar */
+  margin-top: -70px;
+}
+
+@media (min-width: 992px) {
+            .navbar {
+              height: 60px;
+            }
+            .navbar .dropdown-menu {
+          margin-top: 0px;
+        }
+        .navbar-nav {
+          font-weight: bold;
+        }
+        .navbar-nav .nav-link {
+          font-weight: 500;
+        }
+          }
+          .navbar-nav .nav-link:hover {
+          text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+          color: rgb(1, 106, 226) !important;
+          font-weight: bold;
+        }
+        .navbar-nav .nav-link{
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) !important;
+}
+.navbar-light .navbar-nav .nav-link {
+          color: rgb(11, 3, 112) !important;
+        }
+        
+        
+          .navbar {
+          position: fixed !important;
+          top: 0;
+          z-index: 1020;  /* Bootstrap's z-index for sticky navbar */
+        }
+        .navbar {
+                top: 0;
+                z-index: 100;
+                background-color: white;
+                font-family: 'Gabriela', serif !important;
+        
+              }
+              .nav-item {
+    text-align: center;
+    transition: all 0.5s ease;
+}
+.nav-item:hover {
+
+    background-color: rgb(218, 226, 235);
+    border-radius: 30px;
+    padding: 0px 10px; /* Adjust as needed */
+    
+}
+@media (max-width: 992px) { /* Adjust as per your navbar's collapsing breakpoint */
+    .navbar-nav .nav-item.dropdown:hover {
+        position: static;
+        float: none;
+        width: 100%;
+        background-color: rgb(218, 226, 235);
+        border-color: rgba(240, 248, 255, 0); /* Adjust as per your requirement */
+        border-radius: 30px;
+    }
+    .navbar-nav .dropdown-menu {
+        text-align: center;
+        position: static;
+        float: none;
+        width: 100%;
+        background-color:rgb(218, 226, 235);
+        border-color: rgba(240, 248, 255, 0); /* Adjust as per your requirement */
+        border-radius: 30px;
+    }
+}
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 35%;
+    font-size: 200%; /* Increase size */
+    font-weight: bold; /* Make thicker */
+    z-index: 10;
+    color: white;
+}
+
+.owl-prev {
+    left: -5%;
+}
+
+.owl-next {
+    right: -5%;
+}
+.owl-dots {
+    text-align: center; /* Center the dots */
+    padding-top: 30px; /* Add space above the dots */
+}
+.owl-dots .owl-dot {
+
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: #cccccc;
+    border-radius: 50%;
+}
+
+.owl-dots .owl-dot.active {
+    background-color: #978e8e;
+}
+ .text-primary{color: #2780B7; }
+ .modal-body.scrollable-body {
+  max-height: calc(100vh - 140px); /* Adjust based on your header and footer height */
+  overflow-y: auto;
+  padding-bottom: 70px; /* Adjust the value as needed */
+  padding-top: 20px; /* Adjust the value as needed */
+
+}
+
+
+.modal-header {
+  position: sticky;
+  background-color: inherit;
+  z-index: 1055;
+}
+.modal-footer {
+  position: absolute;
+  bottom: 0;
+  background-color: inherit;
+  z-index: 1055;
+  width: 100%;
+}
+.shadowed {
+color: #452d8c;
+text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Modern shadow effect */
+}
+
+.loader {
+  position: relative;
+  width: 2.5em;
+  height: 2.5em;
+  transform: rotate(165deg);
+}
+.loader:before, .loader:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 0.25em;
+  transform: translate(-50%, -50%);
+}
+.loader:before {
+  animation: before 2s infinite;
+}
+.loader:after {
+  animation: after 2s infinite;
+}
+
+@keyframes before {
+  0% {
+    width: 0.5em;
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+  35% {
+    width: 2.5em;
+    box-shadow: 0 -0.5em rgba(225, 20, 98, 0.75), 0 0.5em rgba(111, 202, 220, 0.75);
+  }
+  70% {
+    width: 0.5em;
+    box-shadow: -1em -0.5em rgba(225, 20, 98, 0.75), 1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+  100% {
+    box-shadow: 1em -0.5em rgba(225, 20, 98, 0.75), -1em 0.5em rgba(111, 202, 220, 0.75);
+  }
+}
+@keyframes after {
+  0% {
+    height: 0.5em;
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+  35% {
+    height: 2.5em;
+    box-shadow: 0.5em 0 rgba(61, 184, 143, 0.75), -0.5em 0 rgba(233, 169, 32, 0.75);
+  }
+  70% {
+    height: 0.5em;
+    box-shadow: 0.5em -1em rgba(61, 184, 143, 0.75), -0.5em 1em rgba(233, 169, 32, 0.75);
+  }
+  100% {
+    box-shadow: 0.5em 1em rgba(61, 184, 143, 0.75), -0.5em -1em rgba(233, 169, 32, 0.75);
+  }
+}
+
+.loader {
+  position: absolute;
+  top: calc(50% - 1.25em);
+  left: calc(50% - 1.25em);
+}
+.loaderx {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        z-index: 9999999;
+        opacity: 1;
+        transition: opacity 1s ease-out;
+    }
+
+    .loaderx.fade-out {
+        opacity: 0;
+    }
+  </style>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var loader = document.querySelector('.loaderx');
+        loader.style.display = "block";
+
+        window.addEventListener('load', function() {
+            loader.classList.add('fade-out');
+            setTimeout(function() {
+                loader.style.display = "none";
+            }, 1000); // Matches the transition duration
+        });
+    });
+</script>
+
+</head>
+<body id="home">
+    <div class="loaderx fullscreen" ><div class="loader" ></div></div>
+    <div class="container-fluid bg-white p-0">
+        <!-- Navbar & Hero Start -->
+        <div  class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+                <div class="container px-5">
+                    <a class="navbar-brand fw-bold" href="https://barmga.com/">
+                    <img src="images/barmga-logo.png" alt="Logo" style="max-height:35px;"></a>
+                    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-th-list" style="color:#2780B7;"></i>
+                    </button>
+                    <div class="navbar-collapse collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="https://barmga.com">Home</a></li>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="https://barmga.com/#services">Services</a></li>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="https://barmga.com/#products">Products</a></li>
+                            <li class="nav-item dropdown" style="margin-right: 15px;">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Free Tools                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" >
+                                    <li><a class="dropdown-item" href="https://barmga.com/whatsapp-bulk-links">Whatsapp Sending Tool</a></li>
+                                    <li><a class="dropdown-item" href="https://barmga.com/email-bulk-links">Email Sending Tool</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="https://barmga.com/#about">About</a></li>
+                            <li class="nav-item"><a class="nav-link me-lg-3" href="https://barmga.com/#contact">Contact</a></li>
+                        </ul>
+                        <ul class="navbar-nav ms-auto" style="display: block;" >
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="images/gb.png" style="max-height: 17px; max-width: 23px;">
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="https://barmga.com/">English</a></li>
+                                    <li><a class="dropdown-item" href="https://barmga.com/ar">العربية</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="container-fluid py-5 bg-primary hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated zoomIn">Bulk Email Links</h1>
+                            <p class="text-white pb-3 animated zoomIn">We developed this tool to help you generate bulk email links from existing list of email addresses. You can also add the text message to Email links and then get redirected to the messaging app in one click.</p>
+                            <a href="#tool" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">&nbsp;&nbsp;Start&nbsp;&nbsp;</a>
+                            <a href="https://barmga.com" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">&nbsp;Home&nbsp;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Full Screen Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1">
+            <div class="modal-dialog modal-fullscreen" style="padding: 20px; position: absolute !important;">
+                <div class="modal-content" style="background: rgba(29, 29, 39, 0.95);">
+                    <div class="modal-header border-0" style="padding: 20px;">
+                        <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+
+        <!-- About Start -->
+        <div class="container-fluid py-5" id="tool">
+            <div class="container mt-5">
+                <div class="card p-4 tool">
+                    <h3 class="card-title">Bulk Files Downloader</h3>
+                    <small>Use this tool to download multiple files using provided links or from an Excel file.</small>
+                    <div class="form-group">
+                        <label for="filePrefix" class="lab">File Name Prefix</label>
+                        <input class="form-control" id="filePrefix" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="fileExtension" class="lab">File Extension</label>
+                        <input class="form-control" id="fileExtension" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="linksTextarea" class="lab">Links (one per line)</label>
+                        <textarea class="form-control" id="linksTextarea" rows="5"></textarea>
+                        <small class="form-text text-muted">Any duplicates will be removed.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="fileUpload" class="lab">Import Links From Excel File</label>
+                        <input type="file" class="form-control-file" id="fileUpload" accept=".xlsx">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button class="btn btn-primary btn-custom lab" id="downloadBtn">Download</button>
+                        <button class="btn btn-danger btn-custom lab" id="stopBtn" style="display: none;">Stop</button>
+                    </div>
+                    <div id="error" class="text-danger mt-3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About End -->
+
+
+
+        <!-- Portfolio Start -->
+</div></div>
+
+
+        <!-- Newsletter Start -->
+        <div class="container-fluid bg-primary newsletter my-5 wow fadeInUp" data-wow-delay="0.1s" >
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">Ready to get started</h3>
+                        <small class="text-white">Subscribe to our newsletter for lastest offers & updates.</small>
+                        
+                        <div class="position-relative w-100 mt-3">
+                            <input id="email-sub" class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
+                            <button type="button" id="subscribe" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                        <br>
+                        <small class="position-relative submitted" style="align-items: center; color: rgb(117, 247, 117);"></small>
+                    </div>
+                    <div class="col-md-6 text-center mb-n5 d-none d-md-block">
+                        <img class="img-fluid mt-5" style="height: 250px;" src="images/newsletter.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+        <!-- Portfolio Start -->
+
+
+
+        <!-- Contact Start -->
+        <div class="container-fluid py-4" id="contact">
+            <div class="container px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="section-title position-relative text-center mb-5 mt-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                            <h6 class="position-relative d-inline text-primary ps-4">Contact Us</h6>
+                            <h2 class="mt-2">Contact For Any Query</h2>
+                            <br>
+                        </div>
+                        <div class="wow fadeInUp" data-wow-delay="0.3s">
+
+                            <p class="position-relative text-center" id="submitted" style="align-items: center; color: green;"></p>
+                            <form id="your-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="your-name-input" placeholder="Your Name">
+                                            <label for="name">Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="your-email-input" placeholder="Your Email">
+                                            <label for="email">Your Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="your-phone-input" placeholder="Phone">
+                                            <label for="phone">Phone</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="your-subject-input" placeholder="Subject">
+                                            <label for="subject">Subject</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea class="form-control" placeholder="Leave a message here" id="your-message-input" style="height: 150px"></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-3" id="submit" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact End -->
+        
+
+        <!-- Footer Start -->
+        <div class="container-fluid bg-primary text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <!--<p><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
+                        <p><i class="fa fa-phone-alt me-3"></i>+216 345 67890</p>-->
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <p><i class="fa fa-envelope me-3"></i>info@barmga.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://t.me/bigdata_shop" target="_blank"><i class="fa fa-paper-plane"></i></a>
+                            
+                            <a class="btn btn-outline-light btn-social" href="https://mostaql.com/u/barmga" target="_blank"><i class="fa fa-circle-o" style="font-size: 150%; font-weight: 200%;"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="mailto:info@barmga.com" target="_blank"><i class="fa fa-envelope"></i></a>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Our Company</h5>
+                        <a class="btn btn-link" href="https://barmga.com">Home</a>
+                        <a class="btn btn-link" href="https://barmga.com/#about">About Us</a>
+                        <a class="btn btn-link" href="https://barmga.com/#contact">Contact Us</a>
+                        <a class="btn btn-link" data-bs-toggle="modal" data-bs-target="#termsModal">Terms & Conditions</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Our Activities</h5>
+                       <a class="btn btn-link" href="https://barmga.com/#services">Services</a>
+                       <a class="btn btn-link" href="https://barmga.com/bulk-whatsapp-links#tool">Free Whatsapp Tool</a>
+                       <a class="btn btn-link" href="#tool">Free Email Tool</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <h5 class="text-white mb-4">Newsletter</h5>
+                        <p>Subscribe to our newsletter for lastest offers & updates.</p>
+                        <div class="position-relative w-100 mt-3">
+                            <input id="email-sub" class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                            <button type="button" id="subscribe" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                        <br>
+                        <p class="position-relative submitted" style="align-items: center; color: rgb(117, 247, 117);"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="container px-lg-5">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="https://barmga.com/">Barmga 2024</a>, All Right Reserved. 
+							
+							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+							<div style="display: none;">Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                            <br>Distributed By: <a class="border-bottom"  style="display: none;" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+          <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="termsModalLabel">Contact</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Insert your terms and conditions here -->
+                  <p>To purchase this item please enter the required information</p>
+                  <form id="contactinfoform" class="buyb2bform">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="your-name-input" placeholder="Enter your name">
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="your-email-input" placeholder="Enter your email">
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control" id="your-phone-input" placeholder="Enter your phone number">
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Information about your business</label>
+                        <input class="form-control" id="your-message-input" placeholder="Enter your website">
+                        <br>
+                    </div>
+                    <div class="d-flex align-items-end"><input type="checkbox" class="btn-check b2bcheckButton" id="checkButton" autocomplete="off"><label class="btn btn-outline-primary btn-square mb-1" for="checkButton" style="max-width: 13px; max-height: 13px;"></label><span class="text-muted" style="font-size: 80%; align-items: center;">&nbsp;&nbsp;&nbsp;By purchasing this item you accept our <a class="underline" data-bs-toggle="modal" data-bs-target="#termsModal" style="cursor: pointer;">service policy</a></span></div>
+
+                </form>
+                </div>
+                
+                <div class="modal-footer">
+                  <a name="contactinfo" id="confirmButton" class="btn fw-bold buyb2bbtn" style="background-color: rgb(95, 156, 95); color: rgb(253, 249, 249);" onclick="validateAndRedirect('https://bit.ly/b2bsaudidata')">confirm</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="linksmodal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+            <div class="modal-dialog" style="height: 100%; margin-top: 0; margin-bottom: 0;">
+              <div class="modal-content">
+                <div class="modal-header fixed-top">
+                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h5 class="modal-title" id="termsModalLabel">&nbsp;&nbsp;&nbsp;&nbsp;Email Links</h5>
+                  <div style="flex-grow: 1;"></div>
+                  <a id="fixedButton" class="btn shadow-sm" style="background-color: #7db3ed;" onclick="clickNextLink()"><img src="img/click.png"></a>
+                  
+                </div>
+                <div class="modal-body scrollable-body">
+                </div>
+                <div class="modal-footer">
+                    <a id="backButton" class="btn back" data-bs-dismiss="modal" style="background-color: rgb(95, 118, 156); color: rgb(253, 249, 249);"><i class="fa fa-arrow-left" style="color:#ffffff;"></i></a>
+                    <div style="flex-grow: 1;"></div>
+                    <a id="confirmButton" class="btn" data-bs-dismiss="modal" aria-label="Close" style="background-color: rgb(95, 116, 156); color: rgb(253, 249, 249);">Close</a>
+                    <a id="loadmore" class="btn" style="background-color: rgb(95, 156, 98); color: rgb(253, 249, 249);">More</a>
+                    
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="termsModalLabel">Terms and Conditions</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body scrollable-body">
+                    <p>Welcome to Barmga! These terms and conditions outline the rules and regulations for the use of Barmga's Website, located at <a href="https://barmga.com">barmga.com</a>.</p>
+
+                    <h3>1. Introduction</h3>
+                    <p>By accessing this website, we assume you accept these terms and conditions. Do not continue to use Barmga if you do not agree to take all of the terms and conditions stated on this page.</p>
+                
+                    <h3>2. Intellectual Property Rights</h3>
+                    <p>Unless otherwise stated, Barmga and/or its licensors own the intellectual property rights for all material on Barmga. All intellectual property rights are reserved. You may access this from Barmga for your own personal use subjected to restrictions set in these terms and conditions.</p>
+                
+                    <h3>3. Restrictions</h3>
+                    <p>You are specifically restricted from all of the following:</p>
+                    <ul>
+                        <li>Publishing any website material in any other media;</li>
+                        <li>Selling, sublicensing, and/or otherwise commercializing any website material;</li>
+                        <li>Publicly performing and/or showing any website material;</li>
+                        <li>Using this website in any way that is or may be damaging to this website;</li>
+                        <li>Using this website in any way that impacts user access to this website;</li>
+                        <li>Using this website contrary to applicable laws and regulations, or in any way may cause harm to the website, or to any person or business entity;</li>
+                        <li>Engaging in any data mining, data harvesting, data extracting, or any other similar activity in relation to this website;</li>
+                        <li>Using this website to engage in any advertising or marketing.</li>
+                    </ul>
+                
+                    <h3>4. Your Privacy</h3>
+                    <p>All your information are neither sold nor shared with thirdparties. All your information is collected through our platform or hotmart.</p>
+                
+                    <h3>5. No warranties</h3>
+                    <p>This website is provided "as is," with all faults, and Barmga express no representations or warranties, of any kind related to this website or the materials contained on this website. Also, nothing contained on this website shall be interpreted as advising you.</p>
+                
+                    <h3>6. Limitation of liability</h3>
+                    <p>In no event shall Barmga, nor any of its officers, directors, and employees, be held liable for anything arising out of or in any way connected with your use of this website whether such liability is under contract. Barmga, including its officers, directors, and employees shall not be held liable for any indirect, consequential, or special liability arising out of or in any way related to your use of this website.</p>
+                
+                    <h3>7. Indemnification</h3>
+                    <p>You hereby indemnify to the fullest extent Barmga from and against any and/or all liabilities, costs, demands, causes of action, damages, and expenses arising in any way related to your breach of any of the provisions of these terms.</p>
+                
+                    <h3>8. Severability</h3>
+                    <p>If any provision of these terms is found to be invalid under any applicable law, such provisions shall be deleted without affecting the remaining provisions herein.</p>
+                
+                    <h3>9. Variation of Terms</h3>
+                    <p>Barmga is permitted to revise these terms at any time as it sees fit, and by using this website you are expected to review these terms on a regular basis.</p>
+                
+                    <h3>10. Assignment</h3>
+                    <p>The Barmga is allowed to assign, transfer, and subcontract its rights and/or obligations under these terms without any notification. However, you are not allowed to assign, transfer, or subcontract any of your rights and/or obligations under these terms.</p>
+                
+                    <h3>11. Entire Agreement</h3>
+                    <p>These terms constitute the entire agreement between Barmga and you in relation to your use of this website and supersede all prior agreements and understandings.</p>
+                
+                </div>
+                <div class="modal-footer">
+                  <a  id="confirmButton" class="btn" data-bs-dismiss="modal" aria-label="Close" style="background-color: rgb(95, 156, 95); color: rgb(253, 249, 249);">confirm</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        <!-- Back to Top -->
+       <!--  <a href="#" style="display: none;"class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="fa fa-arrow-up"></i></a> -->
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script>
+    function removeinfototerms(){
+    // Get the elements
+    document.querySelector('#termsModal').remove();}
+    function sharePost(hash) {
+    if (navigator.share) {
+      // Construct the URL with the hash
+      var urlWithHash = window.location.href.split('#')[0] + '#' + hash;
+
+      navigator.share({
+        title: 'Blog Post Title',
+        text: 'Check out this blog post!',
+        url: urlWithHash,
+      })
+      .then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+    } else {
+      // Fallback for devices that do not support the Web Share API
+      alert('Your device does not support the Web Share API');
+    }
+}
+
+    function validateAndRedirect(url) {
+    // Select the button, form, and checkbox
+    var button = document.querySelector('.buyb2bbtn');
+    var form = document.querySelector('.buyb2bform');
+    var checkbox = document.querySelector('.b2bcheckButton');
+    var ele=document.querySelector('#contactModal .btn-close')
+    // Add click event listener to the button
+    button.addEventListener('click', function() {
+        // Get all input elements inside the form
+        var inputs = form.querySelectorAll('input');
+        var allFilled = true;
+
+        // Iterate over each input element
+        for (var i = 0; i < inputs.length; i++) {
+            // If the input element does not contain any string
+            if (inputs[i].value.trim() === '') {
+                // Color the border in red
+                inputs[i].style.borderColor = 'red';
+                allFilled = false;
+            } else {
+                // Reset the border color
+                inputs[i].style.borderColor = '';
+            }
+        }
+
+        // Check if the checkbox is checked
+        if (!checkbox.checked) {
+            // Color the border in red
+            checkbox.nextElementSibling.style.borderColor = 'red';
+            allFilled = false;
+        } else {
+            // Reset the border color
+            checkbox.nextElementSibling.style.borderColor = '';
+        }
+
+        // If all input elements contain a string and the checkbox is checked
+        if (allFilled) {
+            // Redirect to the specified URL in a new page
+            ele.click()
+            window.open(url, '_blank');
+        }
+    });
+}
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+<script>
+
+document.getElementById('fileUpload').addEventListener('change', handleFileUpload);
+document.getElementById('downloadBtn').addEventListener('click', startDownload);
+document.getElementById('stopBtn').addEventListener('click', stopDownload);
+
+let downloadInterval;
+let stopFlag = false;
+
+function handleFileUpload(event) {
+    const fileUpload = document.getElementById('fileUpload');
+
+    if (fileUpload.files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const data = new Uint8Array(e.target.result);
+            const workbook = XLSX.read(data, { type: 'array' });
+            const links = extractLinksFromWorkbook(workbook);
+            document.getElementById('linksTextarea').value = links.join('\n');
+        };
+        reader.readAsArrayBuffer(fileUpload.files[0]);
+    }
+}
+
+function extractLinksFromWorkbook(workbook) {
+    let links = [];
+
+    workbook.SheetNames.forEach(sheetName => {
+        const worksheet = workbook.Sheets[sheetName];
+        const sheetData = XLSX.utils.sheet_to_json(worksheet, { header: 1, raw: false });
+        sheetData.forEach(row => {
+            row.forEach(cell => {
+                if (cell && typeof cell === 'string') {
+                    const matches = cell.match(/http[s]?:\/\/[^\s?]+/gi);
+                    if (matches) {
+                        matches.forEach(link => {
+                            // Keep links that contain a point after the last slash and before "?" or "?"  testpart.length>3 && testpart.includes(".") && (testpart.match(/\./g) || []).length==1 && !testpart.endsWith('.')
+                            const regex =/^\w{3,}\.[^\.]+$/;
+                            let testpart=link.split('?')[0].split('?')[0].split('/').pop()
+                            if (testpart==""){testpart=link.split('?')[0].split('?')[0].slice(0, -1)[0]}
+                            if (regex.test(testpart)) {
+                                links.push(link);
+                            }
+                        });
+                    }
+                }
+            });
+        });
+    });
+
+    return Array.from(new Set(links)); // Remove duplicates
+}
+
+function startDownload() {
+    const downloadBtn = document.getElementById('downloadBtn');
+    const stopBtn = document.getElementById('stopBtn');
+
+    downloadBtn.style.display = 'none';
+    stopBtn.style.display = 'block';
+
+    const filePrefix = document.getElementById('filePrefix').value;
+    const fileExtension = document.getElementById('fileExtension').value.replace(/[\s,]+/g, '#').split('#');
+    const links = Array.from(new Set(document.getElementById('linksTextarea').value.trim().split('\n').map(link => link.trim()).filter(link => link && (link.startsWith('https://') || link.startsWith('http://')))));
+    const filteredLinks = filterLinksByExtension(links, fileExtension);
+
+    stopFlag = false;
+    downloadFiles(filteredLinks, filePrefix);
+}
+
+function stopDownload() {
+    stopFlag = true;
+    document.getElementById('downloadBtn').style.display = 'block';
+    document.getElementById('stopBtn').style.display = 'none';
+}
+
+function filterLinksByExtension(links, extensions) {
+    if (extensions.length === 1 && extensions[0] === '') {
+        return links;
+    }
+
+    return links.filter(link => {
+        const fileExt = link.split('.').pop().split('?')[0];
+        return extensions.includes(fileExt);
+    });
+}
+function downloadFilesxx(links, filePrefix) {
+    let index = 0;
+    let stopFlag = false; // Ensure this is defined somewhere in your code
+
+    function checkInternetConnection() {
+        return fetch('https://www.google.com', { method: 'HEAD' })
+            .then(() => true)
+            .catch(() => false);
+    }
+
+    async function downloadNextFile() {
+        if (index >= links.length || stopFlag) {
+            document.getElementById('downloadBtn').style.display = 'block';
+            document.getElementById('stopBtn').style.display = 'none';
+            return;
+        }
+
+        const link = links[index];
+        const fileName = generateFileName(link, filePrefix, index + 1);
+
+        try {
+            const response = await fetch(link);
+            if (!response.ok) {
+                throw new Error('Failed to download file');
+            }
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        } catch (error) {
+            console.error('Error downloading file:', error);
+
+            // Check if the error is network-related
+            const isNetworkError = error.message.includes('Failed to fetch') || 
+                                   error.message.includes('NetworkError');
+            if (isNetworkError) {
+                // Retry until connection is back
+                const checkConnection = async () => {
+                    let isConnected = false;
+                    while (!isConnected && !stopFlag) {
+                        isConnected = await checkInternetConnection();
+                        if (!isConnected) {
+                            console.log('No internet connection, retrying...');
+                            await new Promise(resolve => setTimeout(resolve, 5000)); // Wait for 5 seconds
+                        }
+                    }
+                    // Retry downloading the same file
+                    downloadNextFile();
+                };
+                checkConnection();
+                return; // Stop further processing for now
+            }
+            // If not a network error, skip this link
+            index++;
+        }
+
+        if (!stopFlag) {
+            setTimeout(downloadNextFile, 500);
+        }
+    }
+
+    downloadNextFile();
+}
+
+function downloadFiles(links, filePrefix) {
+    let index = 0;
+
+    function downloadNextFile() {
+        if (index >= links.length || stopFlag) {
+            document.getElementById('downloadBtn').style.display = 'block';
+            document.getElementById('stopBtn').style.display = 'none';
+            return;
+        }
+
+        const link = links[index];
+        const fileName = generateFileName(link, filePrefix, index + 1);
+
+        fetch(link)
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => {
+        console.error('Error downloading file:', error,link);
+    });
+
+        index++;
+        if (!stopFlag) {
+            downloadInterval = setTimeout(downloadNextFile, 500);
+        }
+    }
+
+    downloadNextFile();
+}
+
+function generateFileName(link, prefix, index) {
+    if(link.endsWith('/')){link=link.slice(0, -1)}
+    const urlParts = link.split('/');
+    const filePart = urlParts[urlParts.length - 1].replace('?','?').split('?')[0];
+    var extension = filePart.split('.').pop();
+    if (!filePart.includes('.')){extension=''}
+    const baseName = filePart.replace(`.${extension}`, '');
+    if(extension){extension="."+extension}
+    if (prefix) {
+        return `${prefix}${index}${extension}`;
+    } else {
+        return `${baseName}${extension}`;
+    }
+}
+
+
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+
+</body>
+
+</html>
