@@ -388,7 +388,7 @@ var iframe = document.getElementById('myIframe');
             var ii=0
             for (let link of links){
                 //TO REMOVE
-                await new Promise((resolve) => setTimeout(resolve,1500));
+                //await new Promise((resolve) => setTimeout(resolve,1500));
                 if (stop){stop=false;document.querySelector('#start').textContent="Start";downloadAsXlsx(projectName);return}
                 currentlink=link+""
                 ii++
