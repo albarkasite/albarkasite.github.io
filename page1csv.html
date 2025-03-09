@@ -394,13 +394,29 @@ var iframe = document.getElementById('myIframe');
                 localStorageLink=link+''
                 //localStorage.setItem(projectName+'link', link);
                 
-                document.querySelector('iframe').setAttribute('src',link)
-                        // Wait for the iframe to load and process data
-        await new Promise((resolve) => {
-            iframe.onload = async function () {
-                await apply();
-                resolve();
-            };
+                // Set the iframe's source
+document.querySelector('iframe').setAttribute('src', link);
+
+// Wait for the iframe to load and monitor the <pre> element
+await new Promise((resolve) => {
+    const iframe = document.querySelector('iframe');
+    iframe.onload = async function () {
+        const checkPreContent = setInterval(() => {
+            const preElement = iframe.contentDocument.querySelector('pre'); // Access the <pre> in the iframe
+            if (preElement && preElement.textContent.includes('{')) {
+                
+                // Stop the iframe loading
+                iframe.contentWindow.stop(); // Stops the loading of the iframe
+                clearInterval(checkPreContent); // Clear the interval
+                resolve(); // Resolve the promise
+                
+                // Perform your additional logic (e.g., apply function)
+                apply();
+            }
+        }, 100); // Check every 100ms
+    };
+});
+
         });
                 while (localStorageLink+''==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
                 workedon.push(link)
