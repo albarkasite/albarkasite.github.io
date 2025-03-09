@@ -324,7 +324,7 @@ function loadXlsxLibrary(callback) {
     }
 }
 
-async function downloadAsCsv(substring) {
+async function downloadAsXlsx(substring) {
     let data = [];
     await findData(substring).then(value => {
         // Remove the last column from each row
