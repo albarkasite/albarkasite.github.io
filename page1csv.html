@@ -394,7 +394,12 @@ var iframe = document.getElementById('myIframe');
                 
                 document.querySelector('iframe').setAttribute('src',link)
                         // Wait for the iframe to load and process data
-
+        await new Promise((resolve) => {
+            iframe.onload = async function () {
+                await apply();
+                resolve();
+            };
+        });
                 while (localStorageLink+''==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
                 workedon.push(link)
 
@@ -407,30 +412,7 @@ async function resume(){
   if (stop){stop=false; document.querySelector('#start').textContent="Start";return}
             if (document.querySelector('#start').textContent=="Stop"){stop=true; document.querySelector('#start').textContent="Start"; return}
             document.querySelector('#start').textContent='Stop'
-            pro// Set the iframe's source
-document.querySelector('iframe').setAttribute('src', link);
-
-// Wait for the iframe to load and monitor the <pre> element
-await new Promise((resolve) => {
-    var iframe = document.querySelector('iframe');
-    iframe.onload = async function () {
-        var checkPreContent = setInterval(() => {
-            var preElement = iframe.contentDocument.querySelector('pre'); // Access the <pre> in the iframe
-            if (preElement && preElement.textContent.includes('{')) {
-
-                
-                // Stop the iframe loading
-                iframe.contentWindow.stop(); // Stops the loading of the iframe
-                clearInterval(checkPreContent); // Clear the interval
-                resolve(); // Resolve the promise
-                
-                // Perform your additional logic (e.g., apply function)
-                apply();
-            }
-        }, 100); // Check every 100ms
-    };
-});
-jectName=document.querySelector('#projectName').value.trim()
+            projectName=document.querySelector('#projectName').value.trim()
             links=document.querySelector('#links').value.trim().split('\n')
             selectors=document.querySelector('#cssSelectors').value.trim().split('\n')
             awaitedelement=document.querySelector('#awaited').value.trim()
@@ -454,30 +436,7 @@ jectName=document.querySelector('#projectName').value.trim()
                         // Wait for the iframe to load and process data
         await new Promise((resolve) => {
             iframe.onload = async function () {
-// Set the iframe's source
-document.querySelector('iframe').setAttribute('src', link);
-
-// Wait for the iframe to load and monitor the <pre> element
-await new Promise((resolve) => {
-    var iframe = document.querySelector('iframe');
-    iframe.onload = async function () {
-        var checkPreContent = setInterval(() => {
-            var preElement = iframe.contentDocument.querySelector('pre'); // Access the <pre> in the iframe
-            if (preElement && preElement.textContent.includes('{')) {
-                console.log("Condition met: <pre> element contains '{'.");
-                
-                // Stop the iframe loading
-                iframe.contentWindow.stop(); // Stops the loading of the iframe
-                clearInterval(checkPreContent); // Clear the interval
-                resolve(); // Resolve the promise
-                
-                // Perform your additional logic (e.g., apply function)
-                apply();
-            }
-        }, 100); // Check every 100ms
-    };
-});
-await apply();
+                await apply();
                 resolve();
             };
         });
