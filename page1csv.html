@@ -398,7 +398,589 @@ var iframe = document.getElementById('myIframe');
 document.querySelector('iframe').setAttribute('src', link);
 
 // Wait for the iframe to load and monitor the <pre> element
+await new Promise((resolve) => <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Extension</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .popup-container {
+            width: 500px;
+            height: 500px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .iframe-container {
+            width: 100%;
+            height: 100%; /* Full viewport height */
+            position: relative;
+        }
+        .iframe-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Optional: Remove border */
+        }
+    </style>
+</head>
+<body> 
+
+    <div class="popup-container">
+      <style>
+        .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.btn-start {
+    background-color: rgb(66, 154, 66);
+    color: white;
+    margin: 0 10px; /* Adjust margin as needed */
+}
+
+.btn-resume {
+    background-color: rgb(219, 161, 55);
+    color: white;
+    margin: 0 10px; /* Adjust margin as needed */
+}
+
+
+      </style>
+        <div class="section">
+            <div class="form-group">
+                <label for="projectName">Project Name</label>
+                <input type="text" class="form-control" id="projectName" placeholder="Enter project name">
+            </div>
+            <div class="form-group"></div>
+                <label for="awaited">Awaited Element CSS Selector</label>
+                <input type="text" class="form-control" id="awaited" placeholder="Enter CSS Selector">
+            </div>
+            <div class="form-group">
+                <label for="cssSelectors">Scraped Elements CSS Selectors</label>
+                <textarea class="form-control" id="cssSelectors" rows="3" placeholder="Enter CSS selectors"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="links">Links</label>
+                <textarea class="form-control" id="links" rows="3" placeholder="Enter links"></textarea>
+            </div>
+            <div class="btn-container">
+            <button type="button" class="btn btn-start" id="start">Start</button>
+            <button type="button" class="btn btn-resume" id="resume" onclick="resume()">Resume</button>
+            <button type="button" class="btn btn-primary" id="download" onclick="downloadAsXlsx(document.querySelector('#projectName').value)">Download</button></div>
+        </div>
+        <p></p>
+    </div>
+    <div class="popup-container">
+        <div class="section iframe-container"><iframe is="x-frame-bypass" id="myIframe" src="" sandbox="allow-forms allow-modals allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation-by-user-activation"></iframe></div></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        var links
+        var selectors
+        var awaitedelement
+        var projectName
+        var nextlink
+        var workedon = []
+        // Set a value in localStorage
+        function fixli(lists, maxLength) {
+  return lists.map(sublist => {
+    return sublist.slice(0, maxLength);
+  });
+}
+async function saveData(dbName, data) {
+  var storeName = String(dbName);
+  return new Promise((resolve, reject) => {
+    let request = indexedDB.open(dbName);
+
+    request.onsuccess = function(event) {
+      let db = event.target.result;
+      let transaction = db.transaction(storeName, "readwrite");
+      let store = transaction.objectStore(storeName, { keyPath: "id", autoIncrement: true });
+      store.clear()
+
+      data.forEach(item => {
+        let obj = {};
+        item.forEach((value, index) => {
+          obj[`field${index}`] = value;
+        });
+        store.put(obj);
+      });
+
+      transaction.oncomplete = function() {
+        resolve("Data saved or updated successfully");
+      };
+
+      transaction.onerror = function() {
+        reject("Error saving or updating data");
+      };
+    };
+
+    request.onerror = function() {
+      reject("Error opening database");
+    };
+  });
+}
+function findBarcode(text) {
+  const regex = /barCodes":\[([^\]\[]*)]/;
+  const match = text.match(regex);
+  return match ? match[1] : '';
+}
+async function findData(dbName) {
+  var storeName = String(dbName);
+  return await new Promise((resolve, reject) => {
+    let request = indexedDB.open(dbName);
+
+    request.onupgradeneeded = function(event) {
+      // If the database is being created for the first time, create the object store
+      let db = event.target.result;
+      db.createObjectStore(storeName, { keyPath: "id", autoIncrement: true });
+    };
+
+    request.onsuccess = function(event) {
+      let db = event.target.result;
+      if (!db.objectStoreNames.contains(storeName)) {
+        resolve([]); // Return empty list if the object store does not exist
+        return [];
+      }
+      let transaction = db.transaction(storeName, "readonly");
+      let store = transaction.objectStore(storeName);
+      let getAllRequest = store.getAll();
+
+      getAllRequest.onsuccess = function() {
+        let data = getAllRequest.result.map(item => Object.values(item));
+        resolve(data);
+        return data
+      };
+
+      getAllRequest.onerror = function() {
+        reject("Error retrieving data");
+      };
+    };
+
+    request.onerror = function() {
+      resolve([]); // Return empty list if there is an error opening the database
+    };
+  });
+}
+
+
+function removeAllStyleTags(element) {
+    const styleTags = element.querySelectorAll('style');
+    styleTags.forEach(styleTag => styleTag.remove());
+}
+
+function querySelectorAll(document,selector) {
+    const hasPattern = /:has\(([^)]+)\)/;
+    const match = selector.match(hasPattern);
+
+    if (!match) {
+        return document.querySelectorAll(selector);
+    }
+
+    const mainSelector = selector.split(':has(')[0];
+    const hasSelector = match[1].trim();
+    const isDirectChild = hasSelector.startsWith('>');
+    const elements = document.querySelectorAll(mainSelector);
+
+    const filteredElements = Array.from(elements).filter(element => {
+        if (isDirectChild) {
+            const childSelector = hasSelector.slice(1).trim();
+            return Array.from(element.children).some(child => child.matches(childSelector));
+        } else {
+            return element.querySelector(hasSelector) !== null;
+        }
+    });
+
+    return filteredElements;
+}
+
+function querySelector(document,selector) {
+    // Check if the selector contains :has()
+    const hasPattern = /:has\(([^)]+)\)/;
+    const match = selector.match(hasPattern);
+
+    if (!match) {
+        // If :has() is not found, use the standard querySelector
+        return document.querySelector(selector);
+    }
+
+    // Extract the main selector and the :has() part
+    const mainSelector = selector.split(':has(')[0];
+    const hasSelector = match[1].trim();
+
+    // Determine if the :has() selector is for direct children or any descendants
+    const isDirectChild = hasSelector.startsWith('>');
+
+    // Get all elements matching the main selector
+    const elements = document.querySelectorAll(mainSelector);
+
+    // Filter elements based on the :has() selector
+    const filteredElements = Array.from(elements).filter(element => {
+        if (isDirectChild) {
+            // Remove the '>' and trim the selector
+            const childSelector = hasSelector.slice(1).trim();
+            return Array.from(element.children).some(child => child.matches(childSelector));
+        } else {
+            return element.querySelector(hasSelector) !== null;
+        }
+    });
+
+    // Return the first matching element or null if none found
+    return filteredElements.length > 0 ? filteredElements[0] : null;
+}
+
+
+
+function extrx(parentId) {
+  var parent = parentId;
+  removeAllStyleTags(parentId)
+  let htmlContent = parent.innerHTML;
+
+  // Replace block-level tags with newline characters
+  htmlContent = htmlContent.replace(/<\/?(div|p|br|li|h[1-6])[^>]*>/gi, '\n');
+
+  // Remove all other HTML tags
+  htmlContent = htmlContent.replace(/<\/?[^>]+(>|$)/g, '');
+
+  // Replace multiple consecutive newlines with a single newline
+  let textWithLineBreaks = htmlContent.replace(/\n+/g, '\n').trim();
+
+  return textWithLineBreaks;
+}
+async function collectData(substring, cssSelectors,document,window) {
+  // Initialize an empty list to store the collected data
+  let collectedData = [window.location.href];
+
+  // Iterate over each CSS selector in the list
+  for (let selector of cssSelectors) {
+      let data = '';
+
+      // Check if the selector starts with 'link:', 'src:', or 'html:'
+      if (selector.startsWith('link:')) {
+          let element = querySelector(document,selector.replace('link:', ''));
+          data = element ? element.href : '';
+      } else if (selector.startsWith('src:')) {
+          let element = querySelector(document,selector.replace('src:', ''));
+          data = element ? element.src : '';
+        } else if (selector.startsWith('meta')) {
+          let element = querySelector(document,selector);
+          data = element ? element.getAttribute('content') : '';
+        } else if (selector.startsWith('html:')) {
+          let element = querySelector(document,selector.replace('html:', ''));
+          data = element ? element.innerHTML : '';
+      }else if (selector.startsWith('barcode:')) {
+        let element = querySelector(document,selector.replace('barcode:', ''));
+        data = element ? findBarcode(extr(element)) : '';
+    } else {
+          let element = querySelector(document,selector);
+          data = element ? extr(element) : '';
+      }
+
+      // Add the collected data to the list
+      collectedData.push(data);
+  }
+
+  // Retrieve the existing list from browser storage or create a new one if it doesn't exist
+  let existingList=[]
+  await findData(substring).then(value => {
+     existingList = fixli(value,selectors.length+1)
+  }) 
+  
+  //let existingList = JSON.parse(localStorage.getItem(substring)) || [];
+
+  // Add the collected data to the existing list
+  existingList.push(collectedData);
+
+  // Save the updated list back to browser storage
+  await saveData(substring,existingList)
+  //localStorage.setItem(substring, JSON.stringify(existingList));
+
+  // Create a new element with class "done" and append it to the body
+  let doneElement = document.createElement('div');
+  doneElement.className = 'done';
+  document.body.appendChild(doneElement);
+console.log('collected')
+}
+function loadXlsxLibrary(callback) {
+    if (typeof XLSX !== 'undefined') {
+        // XLSX is already loaded, proceed with the callback
+        callback();
+    } else {
+        // Load XLSX library
+        let script = document.createElement('script');
+        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js';
+        script.onload = callback;
+        document.head.appendChild(script);
+    }
+}
+
+async function downloadAsXlsx(substring) {
+    let data = [];
+    await findData(substring).then(value => {
+        // Remove the last column from each row
+        data = fixli(value, 100).map(row => row.slice(0, -1)); 
+        console.log(data);
+    });
+
+    if (!data || !data.length) {
+        console.error('No data found for the given substring.');
+        return;
+    }
+
+    // Convert the modified data to CSV format
+    const csvContent = data.map(row => row.join(',')).join('\n');
+    
+    // Create a Blob from the CSV content
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    
+    // Create a link element and trigger the download
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = `${substring}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+
+
+function s2ab(s) {
+    let buf = new ArrayBuffer(s.length);
+    let view = new Uint8Array(buf);
+    for (let i = 0; i < s.length; i++) {
+        view[i] = s.charCodeAt(i) & 0xFF;
+    }
+    return buf;
+}
+var localStorageDict
+var localStorageLink
+var currentLink
+var stop=false
+var iframe = document.getElementById('myIframe');
+        document.querySelector('#start').addEventListener('click', async function (event) {
+            if (stop){stop=false; document.querySelector('#start').textContent="Start";return}
+            if (document.querySelector('#start').textContent=="Stop"){stop=true; document.querySelector('#start').textContent="Start"; return}
+            document.querySelector('#start').textContent='Stop'
+            projectName=document.querySelector('#projectName').value.trim()
+            links=Array.from(new Set(document.querySelector('#links').value.trim().split('\n')))
+            selectors=document.querySelector('#cssSelectors').value.trim().split('\n')
+            awaitedelement=document.querySelector('#awaited').value.trim()
+            let ini = findData(projectName)
+            if (findData(ini).length==0){saveData(projectName, [])};
+            if (typeof(ini)==Array && selectors==['clear']){saveData(projectName, []); return}
+            if (selectors==[""]){selectors=["download"]}
+            if (links==['']||projectName==""){return}
+            var ii=0
+            for (let link of links){
+                //TO REMOVE
+                //await new Promise((resolve) => setTimeout(resolve,1500));
+                if (stop){stop=false;document.querySelector('#start').textContent="Start";downloadAsXlsx(projectName);return}
+                currentlink=link+""
+                ii++
+                if(ii%250==0){document.querySelector('#download').click()}
+                nextlink=links[ii]
+                //localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink})
+                localStorageDict={'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink}
+                localStorageLink=link+''
+                //localStorage.setItem(projectName+'link', link);
+                
+                // Set the iframe's source
+document.querySelector('iframe').setAttribute('src', link);
+
+// Wait for the iframe to load and monitor the <pre> element
 await new Promise((resolve) => {
+    var iframe = document.querySelector('iframe');
+    iframe.onload = async function () {
+        var checkPreContent = setInterval(() => {
+            var preElement = iframe.contentDocument.querySelector('pre'); // Access the <pre> in the iframe
+            if (preElement && preElement.textContent.includes('{')) {
+                
+                // Stop the iframe loading
+                iframe.contentWindow.stop(); // Stops the loading of the iframe
+                clearInterval(checkPreContent); // Clear the interval
+                resolve(); // Resolve the promise
+                
+                // Perform your additional logic (e.g., apply function)
+                apply();
+            }
+        }, 100); // Check every 100ms
+    };
+
+
+        });
+                while (localStorageLink+''==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
+                workedon.push(link)
+
+        }})
+
+    </script>
+        <script>
+async function resume(){
+  if (document.querySelector('#start').textContent=="Stop"){return}
+  if (stop){stop=false; document.querySelector('#start').textContent="Start";return}
+            if (document.querySelector('#start').textContent=="Stop"){stop=true; document.querySelector('#start').textContent="Start"; return}
+            document.querySelector('#start').textContent='Stop'
+            projectName=document.querySelector('#projectName').value.trim()
+            links=document.querySelector('#links').value.trim().split('\n')
+            selectors=document.querySelector('#cssSelectors').value.trim().split('\n')
+            awaitedelement=document.querySelector('#awaited').value.trim()
+            let ini = findData(projectName)
+            if (findData(ini).length==0){saveData(projectName, [])};
+            if (typeof(ini)==Array && selectors==['clear']){saveData(projectName, []); return}
+            if (selectors==[""]){selectors=["download"]}
+            if (links==['']||projectName==""){return}
+            var ii=0
+            for (let link of links){
+                if (link in workedon){continue}
+                if (stop){stop=false;document.querySelector('#start').textContent="Start";downloadAsXlsx(projectName);return}
+                currentlink=link+""
+                ii++
+                nextlink=links[ii]
+                //localStorage.setItem(projectName,{'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink})
+                localStorageDict={'projectName':projectName,"links":links,"selectors":selectors,"awaitedelement":awaitedelement,"nextlink":nextlink}
+                localStorageLink=link+''
+                //localStorage.setItem(projectName+'link', link);
+                document.querySelector('iframe').setAttribute('src', link);
+
+                // Wait for the iframe to load and monitor the <pre> element
+                await new Promise((resolve) => {
+                    var iframe = document.querySelector('iframe');
+                    iframe.onload = async function () {
+                        var checkPreContent = setInterval(() => {
+                            var preElement = iframe.contentDocument.querySelector('pre'); // Access the <pre> in the iframe
+                            if (preElement && preElement.textContent.includes('{')) {
+                                
+                                // Stop the iframe loading
+                                iframe.contentWindow.stop(); // Stops the loading of the iframe
+                                clearInterval(checkPreContent); // Clear the interval
+                                resolve(); // Resolve the promise
+                                
+                                // Perform your additional logic (e.g., apply function)
+                                apply();
+                            }
+                        }, 100); // Check every 100ms
+                    };
+                
+                
+                        });
+                while (localStorageLink+''==link && nextlink){await new Promise((resolve) => setTimeout(resolve,500));}
+                workedon.push(link)
+
+        }
+}
+var documentx=document
+function extractDomain(url) {
+    try {
+        // Create a new URL object
+        const urlObj = new URL(url);
+        // Return the hostname (domain) part of the URL
+        return urlObj.hostname;
+    } catch (error) {
+        console.error("Invalid URL:", error);
+        return null;
+    }
+}
+function deleteCookiesForSite(link) {
+    var domain = extractDomain(link)
+    // Get all cookies for the current domain
+    const cookies = document.cookie.split(";");
+
+    // Loop through each cookie
+    cookies.forEach(cookie => {
+        // Get the cookie name
+        const cookieName = cookie.split("=")[0].trim();
+
+        // Delete the cookie by setting its expiration date to a past date
+        document.cookie = `${cookieName}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${domain}`;
+    });
+localStorage.clear();
+sessionStorage.clear();
+
+}
+function decodeHTMLEntities(text) {
+      const textarea = document.createElement('textarea');
+      textarea.innerHTML = text;
+      return textarea.value;
+    }
+function extr(parentId) {
+    var parent = parentId;
+    removeAllStyleTags(parentId);
+    let htmlContent = parent.innerHTML;
+    htmlContent = decodeHTMLEntities(htmlContent)
+    // Replace block-level tags with newline characters
+    htmlContent = htmlContent.replace(/<\/?(div|p|br|li|h[1-6])[^>]*>/gi, '\n');
+
+    // Remove all other HTML tags
+    htmlContent = htmlContent.replace(/<\/?[^>]+(>|$)/g, '');
+
+    // Replace multiple consecutive newlines with a single newline
+    htmlContent = htmlContent.replace(/\n+/g, '\n').trim();
+
+    // Decode all HTML entities using he library
+    
+
+    // Return the final string
+    return htmlContent;
+  }
+async function apply(){
+    function injectCSS() {
+      const style = document.createElement('style');
+      style.innerHTML = `
+        li::marker {
+          content: '•'; /* Replace this with your desired symbol */
+          color: black; /* You can set the color */
+        }
+      `;
+      document.head.appendChild(style);
+    }
+
+  var window=iframe.contentWindow.window
+  var document=iframe.contentWindow.document
+  let para=localStorageDict
+  let projectName=para['projectName']
+  let nextlink=para['nextlink']
+  let awaitedelement=para['awaitedelement']
+  let selectors=para["selectors"]
+  if (selectors==["download"]){downloadAsXlsx(projectName)}
+  var iv=0
+  deleteCookiesForSite(window.location.href)
+  deleteCookiesForSite(window.location.href.replace('https://www.','https://').replace('http://www.','http://'))
+  while (document.querySelector(awaitedelement) == null) {
+  console.log(awaitedelement);
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  iv++;
+  if (stop){return}
+  if (iv > 50) {
+    iv = 0;
+     window.location.href = (currentlink+'?').replace('?',"?"+String(iv)+"&");
+  }
+}
+injectCSS();
+await new Promise((resolve) => setTimeout(resolve, 200));
+  await collectData(projectName,selectors,document,window)
+
+  localStorageLink=nextlink+''
+  console.log(localStorageLink,nextlink)
+  if (!nextlink){stop=false;documentx.querySelector('#start').textContent="Start";downloadAsXlsx(projectName)}
+}
+            
+
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+     
+</body>
+</html>
+
     const iframe = document.querySelector('iframe');
     iframe.onload = async function () {
         const checkPreContent = setInterval(() => {
