@@ -324,10 +324,11 @@ function loadXlsxLibrary(callback) {
     }
 }
 
-async function downloadAsXlsx(substring) {
+async function downloadAsCsv(substring) {
     let data = [];
     await findData(substring).then(value => {
-        data = fixli(value, 100);
+        // Remove the last column from each row
+        data = fixli(value, 100).map(row => row.slice(0, -1)); 
         console.log(data);
     });
 
@@ -336,7 +337,7 @@ async function downloadAsXlsx(substring) {
         return;
     }
 
-    // Convert the data to CSV format
+    // Convert the modified data to CSV format
     const csvContent = data.map(row => row.join(',')).join('\n');
     
     // Create a Blob from the CSV content
@@ -350,6 +351,7 @@ async function downloadAsXlsx(substring) {
     link.click();
     document.body.removeChild(link);
 }
+
 
 
 function s2ab(s) {
